@@ -79,7 +79,7 @@ def build(run_id, cfg, tickets, declared=()):
         "runner": {"platform": platform.platform(), "ci": bool(os.environ.get("CI")),
                    "github_run_id": os.environ.get("GITHUB_RUN_ID"),
                    "runner_name": os.environ.get("RUNNER_NAME")},
-        "jev_backend": os.environ.get("JEV_BACKEND", "api"),
+        "jev_backend": os.environ.get("JEV_BACKEND") or "api",
     }
     m["manifest_hash"] = sha(json.dumps({k: m[k] for k in CRITICAL + WARN}, sort_keys=True))
     return m

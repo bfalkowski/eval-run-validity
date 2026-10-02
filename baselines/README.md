@@ -1,5 +1,8 @@
 `manifest.json` is the fingerprint of a clean run that every other run is compared against.
 
-It currently comes from a stub-backend clean run, so the plumbing tests have a baseline. Replace it with the manifest of the first clean run on the real API before collecting paper data:
+Current baseline: `gh37010661003-clean-loud-none`, a clean run in GitHub Actions on the real Jev API
+(Python 3.11, pinned dependencies, commit cd0753a). Its results are on the `data` branch.
+
+To replace it, copy the manifest of a newer clean CI run:
 
     cp runs/<clean run id>/manifest.json baselines/manifest.json
