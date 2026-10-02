@@ -7,6 +7,7 @@ import os
 import shutil
 import subprocess
 import sys
+import uuid
 
 import pytest
 
@@ -109,7 +110,7 @@ def test_faultd_is_deterministic():
 def test_run_outputs_never_contain_the_key(tmp):
     """Traces, manifests and items get committed to the data branch, so the key
     must never be written into them, including on a wrong-key run."""
-    secret = "ts-test-SECRET-0123456789abcdef"
+    secret = "ts-test-" + uuid.uuid4().hex  # made at runtime so no key-like literal is in the code
     env = {**ENV, "TYPESAFE_API_KEY": secret}
     run(tmp, "keycheck", "--fault-plan", "plans/wrong_key_first20.json", env=env)
     for folder in (tmp / "runs" / "keycheck", tmp / "truth" / "keycheck"):

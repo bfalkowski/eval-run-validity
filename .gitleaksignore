@@ -1,0 +1,3 @@
+# Fake key used by an earlier version of the key-leak test (not a real secret).
+# The test now generates its fake key at runtime.
+8a3de883b71e2238df1c66881cf93e4d459fbeab:tests/test_pipeline.py:generic-api-key:112
