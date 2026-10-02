@@ -25,7 +25,6 @@ from collections import defaultdict
 
 TRANSPORT = {"timeout", "connection_error"}
 EXCLUDED = {"infrastructure", "config_drift", "judge_failure", "task_defect", "harness_bug"}
-DATA = os.path.join(os.path.dirname(__file__), "..", "data")
 
 
 def load_jsonl(path):
@@ -119,13 +118,14 @@ def attribute_item(rec, spans, dataset_expected, run_drift, seen_tickets):
             "reasons": reasons}
 
 
-def attribute_run(run_dir, run_drift_fields):
+def attribute_run(run_dir, run_drift_fields, dataset="v1"):
+    from agents.datasets import tickets_path
     # A changed dataset is a task/dataset problem, reported at run level by the
     # gate; it is not a reason to blame individual failures on config drift.
     run_drift_fields = [f for f in run_drift_fields if f != "dataset_hash"]
     items = load_jsonl(os.path.join(run_dir, "items.jsonl"))
     spans = load_jsonl(os.path.join(run_dir, "traces.jsonl"))
-    dataset_expected = {t["ticket_id"]: t["expected"] for t in load_jsonl(os.path.join(DATA, "tickets.jsonl"))}
+    dataset_expected = {t["ticket_id"]: t["expected"] for t in load_jsonl(tickets_path(dataset))}
     by = spans_by_item(spans)
     seen, out = set(), []
     for rec in sorted(items, key=lambda r: r["item_index"]):

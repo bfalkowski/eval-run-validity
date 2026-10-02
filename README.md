@@ -11,9 +11,9 @@ An eval score only means something if the run that produced it worked. This repo
 | `agents/` | A support agent and a judge. Jev (TypeSafe) makes every decision. A local orders service provides the tools. A deterministic scorer checks the outcome. |
 | `faultd/` | The fault API. Every component asks it, call by call, whether to fail. It logs what it injected to `ground_truth/`, which the gate never reads. |
 | `validity/` | Run manifest (fingerprint), preflight checks, OpenTelemetry tracing, attribution rules and the gate. |
-| `data/` | 60 support tickets, the orders fixture and the expected actions. Built by `data/make_data.py`. |
+| `data/` | Two datasets of 60 support tickets each, with their orders fixtures and expected actions. `v1` (`data/make_data.py`) is straightforward; `v2` (`data/make_data_v2.py`, in `data/v2/`) makes each ticket hard in one deliberate way and is the one used for the paper. Pick with `--dataset` or `DATASET`; the default is `v2`. |
 | `plans/` | The fault catalog: one JSON file per fault and dose. Built by `plans/make_plans.py`. |
-| `baselines/` | The manifest of a clean run that other runs are compared against. |
+| `baselines/` | One manifest per dataset (`manifest_v1.json`, `manifest_v2.json`): a clean CI run that other runs are compared against. |
 | `.github/workflows/` | `ci` (tests), `secrets` (secret scan), `run` (eval runs with faults), `collect` (gather runs onto the `data` branch). |
 
 ## The eval
@@ -53,7 +53,7 @@ POLICY_VERSION=v1 python run.py --run-id clean-01
 POLICY_VERSION=v1 python run.py --run-id wk-01 --fault-plan plans/wrong_key_first20.json --error-policy silent
 
 # re-gate a run folder
-python -m validity.gate runs/wk-01 --baseline baselines/manifest.json
+python -m validity.gate runs/wk-01   # compares against baselines/manifest_<dataset>.json
 
 # every plan once, with the stub
 JEV_BACKEND=stub POLICY_VERSION=v1 JEV_BACKOFF_S=0 python sweep.py --prefix stub

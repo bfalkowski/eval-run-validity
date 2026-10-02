@@ -10,7 +10,6 @@ the whole pipeline can be tested without a key or network. The stub is only
 for plumbing tests; results in the paper come from the real API.
 """
 
-import hashlib
 import io
 import json
 import os
@@ -56,50 +55,11 @@ def _real_backend(payload, key):
         return resp.read()
 
 
-_stub_tickets = None
-
-
-def _stub_backend(payload, key):
-    """Answers like Jev would if it followed the policy, with a few seeded
-    mistakes so a clean run is not a perfect score."""
-    from agents.policy import ACTIONS, resolve
-    global _stub_tickets
-    time.sleep(float(os.environ.get("JEV_STUB_LATENCY_S", "0")))
-    if key == INVALID_KEY or not key:
-        raise _http_error(401, "Unauthorized")
-    if _stub_tickets is None:
-        path = os.path.join(os.path.dirname(__file__), "..", "data", "tickets.jsonl")
-        _stub_tickets = {t["text"]: t for t in map(json.loads, open(path))}
-    req = json.loads(payload)
-    st, (qname, q) = req["state"], next(iter(req["questions"].items()))
-    usage = {"input_tokens": len(payload) // 4}
-    t = _stub_tickets.get(st.get("ticket"))
-    if t is None:  # canary or unknown ticket: answer the canary's known answer
-        if q["type"] == "choice":
-            return json.dumps({"answers": {qname: {"choice": "0", "confidence": 0.99}}, "usage": usage}).encode()
-        return json.dumps({"answers": {qname: {"noul": 0.97}}, "usage": usage}).encode()
-    stock = st.get("stock", 1)
-    right = resolve(t["issue"], st.get("order"), stock, refund_limit="$500" in st.get("policy", ""))
-
-    def h(tag):
-        return int(hashlib.sha256(f"{t['ticket_id']}|{tag}".encode()).hexdigest()[:8], 16) / 16 ** 8
-
-    if q["type"] == "choice":
-        action = right
-        if h("decision") < 0.06 or action is None:
-            action = ACTIONS[(ACTIONS.index(right or "reply") + 1) % len(ACTIONS)]
-        key_ = next(k for k, v in q["criteria"].items() if v.startswith(action))
-        ans = {"choice": key_, "confidence": 0.9 if action == right else 0.6}
-    else:
-        ok = st.get("agent_resolution") == right
-        if h("judge") < 0.04:
-            ok = not ok
-        ans = {"noul": 0.93 if ok else 0.08}
-    return json.dumps({"answers": {qname: ans}, "usage": usage}).encode()
-
-
 def _backend():
-    return _stub_backend if os.environ.get("JEV_BACKEND") == "stub" else _real_backend
+    if os.environ.get("JEV_BACKEND") == "stub":
+        from agents.jev_stub import stub_backend
+        return stub_backend
+    return _real_backend
 
 
 # ------------------------------------------------------------------ one attempt

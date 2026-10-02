@@ -26,7 +26,7 @@ import socket
 import sys
 import time
 
-from agents import jev, scorer, support
+from agents import datasets, jev, scorer, support
 from agents.orders import OrdersService
 from agents.policy import POLICIES, resolve
 from faultd import client as faultd
@@ -56,10 +56,8 @@ def free_port():
     return p
 
 
-def load_data():
-    tickets = [json.loads(l) for l in open(os.path.join(ROOT, "data", "tickets.jsonl"))]
-    fixture = json.load(open(os.path.join(ROOT, "data", "orders.json")))
-    return tickets, fixture
+def load_data(version):
+    return datasets.load(version)
 
 
 def apply_run_faults(cfg, tickets, fixture):
@@ -98,7 +96,10 @@ def main():
     ap.add_argument("--fault-plan", default=None)
     ap.add_argument("--variant", choices=["context_strip"], default=None,
                     help="a declared change (control runs): the gate should let it through")
-    ap.add_argument("--baseline", default=os.path.join(ROOT, "baselines", "manifest.json"))
+    ap.add_argument("--dataset", choices=sorted(datasets.DATASETS),
+                    default=os.environ.get("DATASET", datasets.DEFAULT))
+    ap.add_argument("--baseline", default=None,
+                    help="baseline manifest; default baselines/manifest_<dataset>.json")
     ap.add_argument("--out", default=os.path.join(ROOT, "runs"))
     ap.add_argument("--truth-dir", default=os.path.join(ROOT, "ground_truth"))
     a = ap.parse_args()
@@ -123,13 +124,13 @@ def main():
     cfg = {"policy_version": version, "policy_text": POLICIES[version],
            "decision_instructions": support.DECISION_INSTRUCTIONS,
            "context_fields": ["order", "policy", "stock", "ticket", "today"],
-           "error_policy": a.error_policy}
+           "error_policy": a.error_policy, "dataset": a.dataset}
     declared = []
     if a.variant == "context_strip":
         cfg["context_fields"].remove("stock")
         declared.append("context_fields")
 
-    tickets, fixture = load_data()
+    tickets, fixture = load_data(a.dataset)
     if a.tickets:
         tickets = tickets[: a.tickets]
     tickets = apply_run_faults(cfg, tickets, fixture)
@@ -142,7 +143,8 @@ def main():
         pre = preflight.run()
     json.dump(pre, open(os.path.join(run_dir, "preflight.json"), "w"), indent=1)
 
-    baseline = json.load(open(a.baseline)) if a.baseline and os.path.exists(a.baseline) else None
+    bpath = a.baseline or datasets.baseline_path(a.dataset)
+    baseline = json.load(open(bpath)) if os.path.exists(bpath) else None
     if not pre["ok"]:
         tracing.shutdown()
         finish(run_dir, baseline)

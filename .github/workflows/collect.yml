@@ -47,7 +47,7 @@ jobs:
           fi
           echo "{\"collect_fault\": \"${{ inputs.pipeline_fault }}\", \"run\": \"$first\"}" > ground_truth/$first/collect.json
       - name: Re-gate
-        run: for d in runs/*/; do python -m validity.gate "$d" --baseline baselines/manifest.json; done
+        run: for d in runs/*/; do python -m validity.gate "$d" --baseline auto; done
       - name: Commit to data branch
         run: |
           mv runs /tmp/runs; mv ground_truth /tmp/ground_truth

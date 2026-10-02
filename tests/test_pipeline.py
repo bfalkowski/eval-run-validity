@@ -44,7 +44,9 @@ def test_clean_run_is_valid(tmp):
 def test_wrong_key_silent_lists_missed_evals(tmp):
     v = run(tmp, "wk", "--fault-plan", "plans/wrong_key_first20.json", "--error-policy", "silent")
     assert v["verdict"] == "invalid"
-    assert v["missed_items"] == [f"T{i:03d}" for i in range(1, 21)]
+    from agents import datasets
+    first20 = [t["ticket_id"] for t in datasets.load(datasets.DEFAULT)[0][:20]]
+    assert v["missed_items"] == first20
     assert v["categories"].get("infrastructure") == 20
     # the silent fallback makes the naive score look like a model result
     assert v["score"]["naive"] is not None and v["score"]["valid_items"] is None

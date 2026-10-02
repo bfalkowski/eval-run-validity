@@ -60,6 +60,7 @@ def build(run_id, cfg, tickets, declared=()):
         "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "planned_items": len(tickets),
         "model": jev.model(),
+        "dataset": cfg.get("dataset", "v1"),
         "policy_version": cfg["policy_version"],
         "policy_hash": sha(cfg["policy_text"]),
         "decision_instructions_hash": sha(cfg["decision_instructions"]),

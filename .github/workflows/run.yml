@@ -18,6 +18,10 @@ on:
         type: choice
         options: [stub, api]
         default: stub
+      dataset:
+        type: choice
+        options: [v2, v1]
+        default: v2
       tickets:
         default: "60"
       pipeline_fault:
@@ -36,7 +40,7 @@ jobs:
       matrix:
         plan: ${{ fromJSON(inputs.plans) }}
     env:
-      RUN_ID: gh${{ github.run_id }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ inputs.pipeline_fault }}
+      RUN_ID: gh${{ github.run_id }}-${{ inputs.dataset }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ inputs.pipeline_fault }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -69,6 +73,7 @@ jobs:
           JEV_STUB_LATENCY_S: "0.1"
           MAX_SPEND_USD: ${{ inputs.max_spend_usd }}
           PF: ${{ inputs.pipeline_fault }}
+          DATASET: ${{ inputs.dataset }}
         run: |
           if [ "$PF" != "missing_env" ]; then export POLICY_VERSION=v1; fi
           args="--run-id $RUN_ID --tickets ${{ inputs.tickets }} --error-policy ${{ inputs.error_policy }}"

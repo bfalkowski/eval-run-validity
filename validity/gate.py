@@ -1,7 +1,10 @@
 """The validity gate: valid, degraded or invalid, decided before any score is
 reported. Writes verdict.json in the run folder.
 
-  python -m validity.gate runs/<run_id> [--baseline baselines/manifest.json]
+  python -m validity.gate runs/<run_id> [--baseline auto | path]
+
+With --baseline auto (the default), the baseline is baselines/manifest_<dataset>.json
+for the run's dataset.
 
 An invalid run reports no score, only why. A degraded run reports the score
 on valid items with the exclusion rate beside it. The naive score (what a
@@ -53,7 +56,7 @@ def evaluate(run_dir, baseline=None):
     if d["warn"]:
         worse("degraded", f"environment differs from baseline in {d['warn']}")
 
-    attrs, items, spans = attribution.attribute_run(run_dir, d["critical"])
+    attrs, items, spans = attribution.attribute_run(run_dir, d["critical"], m.get("dataset", "v1"))
     planned = m["planned_items"]
     idx = Counter(r["item_index"] for r in items)
     if any(n > 1 for n in idx.values()):
@@ -119,9 +122,15 @@ def evaluate(run_dir, baseline=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("run_dir")
-    ap.add_argument("--baseline", default=None)
+    ap.add_argument("--baseline", default="auto")
     a = ap.parse_args()
-    base = json.load(open(a.baseline)) if a.baseline and os.path.exists(a.baseline) else None
+    path = a.baseline
+    if path == "auto":
+        from agents.datasets import baseline_path
+        ds = json.load(open(os.path.join(a.run_dir, "manifest.json"))).get("dataset", "v1") \
+            if os.path.exists(os.path.join(a.run_dir, "manifest.json")) else "v1"
+        path = baseline_path(ds)
+    base = json.load(open(path)) if path and os.path.exists(path) else None
     v = evaluate(a.run_dir, base)
     json.dump(v, open(os.path.join(a.run_dir, "verdict.json"), "w"), indent=1)
     print(summary(v))
