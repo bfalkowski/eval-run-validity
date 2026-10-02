@@ -88,7 +88,7 @@ def evaluate(run_dir, baseline=None):
     valid_score = _rate([bool(rec[a["item_index"]].get("correct")) for a in kept])
     first_vote = [bool((r.get("judge_votes") or [False])[0]) for r in items]
     jkept = [a for a in attrs if a["judge"] == "ok"]
-    judge_excl_rate = 1 - len(jkept) / len(attrs) if attrs else 0.0
+    judge_excl_rate = (len(attrs) - len(jkept)) / len(attrs) if attrs else 0.0  # not 1 - x: 1 - 51/60 > 0.15
     judge_valid = _rate([all(rec[a["item_index"]]["judge_votes"]) for a in jkept])
     if attrs and judge_excl_rate > CONFIG["max_excluded_degraded"]:
         worse("degraded", f"judge score withheld: {judge_excl_rate:.0%} of judge results excluded")

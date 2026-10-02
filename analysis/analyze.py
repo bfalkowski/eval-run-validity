@@ -119,9 +119,17 @@ def item_truth(run, expected_by_ticket, tickets=None, fixture=None):
             if a and b and expected_by_ticket.get(a["ticket_id"]) != expected_by_ticket.get(b["ticket_id"]):
                 truth[i][0] = "harness_bug"
         elif tgt == "harness" and k == "no_reset":
-            prev = by_idx.get(i - 1)
-            if prev and prev.get("action") in ("refund", "reship", "escalate"):
-                truth[i][0] = "harness_bug"
+            # effects pile up across consecutive missed resets, so look back to the last real reset
+            no_reset = {y["item"] for y in inj if y["kind"] == "no_reset"}
+            j = i - 1
+            while True:
+                prev = by_idx.get(j)
+                if prev and prev.get("action") in ("refund", "reship", "escalate"):
+                    truth[i][0] = "harness_bug"
+                    break
+                if j not in no_reset or j < 0:
+                    break
+                j -= 1
     for (tgt, i, _), attempts in calls.items():
         if len(attempts) >= ATTEMPTS:
             if tgt == "jev":
