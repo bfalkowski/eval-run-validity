@@ -1,0 +1,723 @@
+{
+ "split": "silent",
+ "runs": 34,
+ "faulted_runs": 32,
+ "noise_floor": {
+  "n": 13,
+  "mean": 0.8295,
+  "sd": 0.0194,
+  "min": 0.8,
+  "max": 0.8833
+ },
+ "rq1": {
+  "false_regression_rate": 0.59375,
+  "false_improvement_rate": 0.0,
+  "by_category": {
+   "infrastructure": {
+    "runs": 28,
+    "false_regression": 19,
+    "flagged_by_gate": 26
+   },
+   "judge_failure": {
+    "runs": 4,
+    "false_regression": 0,
+    "flagged_by_gate": 4
+   }
+  }
+ },
+ "rq2": {
+  "affected_items": 381,
+  "attribution_accuracy": 1.0,
+  "per_category": {
+   "infrastructure": {
+    "recall": 1.0,
+    "precision": 1.0,
+    "n": 381
+   }
+  },
+  "confusion": {
+   "infrastructure -> infrastructure": 381
+  },
+  "unaffected_items_excluded": 0,
+  "unaffected_items": 1659,
+  "judge_confusion": {
+   "infrastructure -> infrastructure": 345,
+   "infrastructure -> judge_failure": 1,
+   "infrastructure -> ok": 36,
+   "judge_failure -> judge_failure": 81,
+   "judge_failure -> ok": 7
+  }
+ },
+ "rq3": {
+  "should_flag": 30,
+  "flagged": 30,
+  "should_pass": 4,
+  "wrongly_flagged": 0,
+  "exact_level_match": 34,
+  "level_confusion": {
+   "degraded -> degraded": 14,
+   "invalid -> invalid": 16,
+   "valid -> valid": 4
+  }
+ },
+ "rq4": {
+  "clean_mean": 0.8294871794871795,
+  "valid_items_gap": {
+   "gh37022301998-v2-jev_401_mid-silent-none-r1": -0.0295,
+   "gh37022301998-v2-jev_401_mid-silent-none-r2": -0.0295,
+   "gh37022301998-v2-jev_429_25-silent-none-r1": -0.0364,
+   "gh37022301998-v2-jev_429_25-silent-none-r2": -0.04,
+   "gh37022301998-v2-jev_503_25-silent-none-r1": -0.0019,
+   "gh37022301998-v2-jev_503_25-silent-none-r2": 0.0126,
+   "gh37022301998-v2-jev_down_25-silent-none-r1": -0.0019,
+   "gh37022301998-v2-jev_down_25-silent-none-r2": -0.0049,
+   "gh37022301998-v2-jev_down_mid-silent-none-r1": 0.0205,
+   "gh37022301998-v2-jev_down_mid-silent-none-r2": 0.0455,
+   "gh37022301998-v2-jev_flap-silent-none-r1": 0.0359,
+   "gh37022301998-v2-jev_flap-silent-none-r2": -0.0026,
+   "gh37022301998-v2-jev_malformed_25-silent-none-r1": 0.0277,
+   "gh37022301998-v2-jev_malformed_25-silent-none-r2": -0.0251,
+   "gh37022301998-v2-jev_out_of_range_25-silent-none-r1": 0.0038,
+   "gh37022301998-v2-jev_out_of_range_25-silent-none-r2": -0.0034,
+   "gh37022301998-v2-jev_timeout_25-silent-none-r1": -0.0019,
+   "gh37022301998-v2-jev_timeout_25-silent-none-r2": -0.0225,
+   "gh37022301998-v2-judge_503_25-silent-none-r1": -0.0128,
+   "gh37022301998-v2-judge_503_25-silent-none-r2": 0.0038,
+   "gh37022301998-v2-judge_flip_25-silent-none-r1": 0.0038,
+   "gh37022301998-v2-judge_flip_25-silent-none-r2": 0.0038,
+   "gh37022301998-v2-judge_malformed_25-silent-none-r1": 0.0038,
+   "gh37022301998-v2-judge_malformed_25-silent-none-r2": -0.0295,
+   "gh37022301998-v2-tool_500_05-silent-none-r1": -0.0336,
+   "gh37022301998-v2-tool_500_05-silent-none-r2": 0.0429,
+   "gh37022301998-v2-tool_500_25-silent-none-r1": 0.0551,
+   "gh37022301998-v2-tool_500_25-silent-none-r2": 0.0529,
+   "gh37022301998-v2-wrong_key_first20-silent-none-r1": 0.0205,
+   "gh37022301998-v2-wrong_key_first20-silent-none-r2": 0.0205,
+   "gh37022301998-v2-wrong_key_last20-silent-none-r1": -0.1045,
+   "gh37022301998-v2-wrong_key_last20-silent-none-r2": -0.0545
+  },
+  "median_abs_gap_valid_items": 0.0215,
+  "median_abs_gap_naive": 0.0878205128205129
+ },
+ "runs_detail": [
+  {
+   "run": "gh37022301998-v2-clean-silent-none-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "valid",
+   "gate": "valid",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": []
+  },
+  {
+   "run": "gh37022301998-v2-clean-silent-none-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "valid",
+   "gate": "valid",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": []
+  },
+  {
+   "run": "gh37022301998-v2-jev_401_mid-silent-none-r1",
+   "plan": "jev_401_mid",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6166666666666667,
+   "valid_items": 0.8,
+   "affected": 30,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 30 of 60 items excluded (50%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_401_mid-silent-none-r2",
+   "plan": "jev_401_mid",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6166666666666667,
+   "valid_items": 0.8,
+   "affected": 30,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 30 of 60 items excluded (50%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_429_25-silent-none-r1",
+   "plan": "jev_429_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8,
+   "valid_items": 0.7931034482758621,
+   "affected": 2,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 2 of 60 items excluded (3%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_429_25-silent-none-r2",
+   "plan": "jev_429_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.7666666666666667,
+   "valid_items": 0.7894736842105263,
+   "affected": 3,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 3 of 60 items excluded (5%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_503_25-silent-none-r1",
+   "plan": "jev_503_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8275862068965517,
+   "affected": 2,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 2 of 60 items excluded (3%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_503_25-silent-none-r2",
+   "plan": "jev_503_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8166666666666667,
+   "valid_items": 0.8421052631578947,
+   "affected": 3,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 3 of 60 items excluded (5%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_down_25-silent-none-r1",
+   "plan": "jev_down_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8275862068965517,
+   "affected": 2,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 2 of 60 items excluded (3%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_down_25-silent-none-r2",
+   "plan": "jev_down_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8,
+   "valid_items": 0.8245614035087719,
+   "affected": 3,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 3 of 60 items excluded (5%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_down_mid-silent-none-r1",
+   "plan": "jev_down_mid",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7,
+   "valid_items": 0.85,
+   "affected": 20,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 20 of 60 items excluded (33%)",
+    "degraded: judge score withheld: 33% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_down_mid-silent-none-r2",
+   "plan": "jev_down_mid",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7166666666666667,
+   "valid_items": 0.875,
+   "affected": 20,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 20 of 60 items excluded (33%)",
+    "degraded: judge score withheld: 35% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_flap-silent-none-r1",
+   "plan": "jev_flap",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.75,
+   "valid_items": 0.8653846153846154,
+   "affected": 8,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 8 of 60 items excluded (13%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_flap-silent-none-r2",
+   "plan": "jev_flap",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.7166666666666667,
+   "valid_items": 0.8269230769230769,
+   "affected": 8,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 8 of 60 items excluded (13%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_malformed_25-silent-none-r1",
+   "plan": "jev_malformed_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6666666666666666,
+   "valid_items": 0.8571428571428571,
+   "affected": 18,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 18 of 60 items excluded (30%)",
+    "degraded: judge score withheld: 33% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_malformed_25-silent-none-r2",
+   "plan": "jev_malformed_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6666666666666666,
+   "valid_items": 0.8043478260869565,
+   "affected": 14,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 14 of 60 items excluded (23%)",
+    "degraded: judge score withheld: 27% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_out_of_range_25-silent-none-r1",
+   "plan": "jev_out_of_range_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.65,
+   "valid_items": 0.8333333333333334,
+   "affected": 18,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 18 of 60 items excluded (30%)",
+    "degraded: judge score withheld: 32% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_out_of_range_25-silent-none-r2",
+   "plan": "jev_out_of_range_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6833333333333333,
+   "valid_items": 0.8260869565217391,
+   "affected": 14,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 14 of 60 items excluded (23%)",
+    "degraded: judge score withheld: 27% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_timeout_25-silent-none-r1",
+   "plan": "jev_timeout_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8275862068965517,
+   "affected": 2,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 2 of 60 items excluded (3%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-jev_timeout_25-silent-none-r2",
+   "plan": "jev_timeout_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.7833333333333333,
+   "valid_items": 0.8070175438596491,
+   "affected": 3,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: 3 of 60 items excluded (5%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-judge_503_25-silent-none-r1",
+   "plan": "judge_503_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "valid",
+   "gate": "valid",
+   "naive": 0.8166666666666667,
+   "valid_items": 0.8166666666666667,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": []
+  },
+  {
+   "run": "gh37022301998-v2-judge_503_25-silent-none-r2",
+   "plan": "judge_503_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "valid",
+   "gate": "valid",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": []
+  },
+  {
+   "run": "gh37022301998-v2-judge_flip_25-silent-none-r1",
+   "plan": "judge_flip_25",
+   "category": "judge_failure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: judge score withheld: 27% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-judge_flip_25-silent-none-r2",
+   "plan": "judge_flip_25",
+   "category": "judge_failure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: judge score withheld: 37% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-judge_malformed_25-silent-none-r1",
+   "plan": "judge_malformed_25",
+   "category": "judge_failure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: judge score withheld: 32% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-judge_malformed_25-silent-none-r2",
+   "plan": "judge_malformed_25",
+   "category": "judge_failure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8,
+   "valid_items": 0.8,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: judge score withheld: 45% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-tool_500_05-silent-none-r1",
+   "plan": "tool_500_05",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7333333333333333,
+   "valid_items": 0.7959183673469388,
+   "affected": 11,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 11 of 60 items excluded (18%)"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-tool_500_05-silent-none-r2",
+   "plan": "tool_500_05",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8,
+   "valid_items": 0.8723404255319149,
+   "affected": 13,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 13 of 60 items excluded (22%)",
+    "degraded: judge score withheld: 18% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-tool_500_25-silent-none-r1",
+   "plan": "tool_500_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.5166666666666667,
+   "valid_items": 0.8846153846153846,
+   "affected": 34,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 34 of 60 items excluded (57%)",
+    "degraded: judge score withheld: 37% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-tool_500_25-silent-none-r2",
+   "plan": "tool_500_25",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.48333333333333334,
+   "valid_items": 0.8823529411764706,
+   "affected": 43,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 43 of 60 items excluded (72%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-wrong_key_first20-silent-none-r1",
+   "plan": "wrong_key_first20",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.5833333333333334,
+   "valid_items": 0.85,
+   "affected": 20,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 20 of 60 items excluded (33%)",
+    "degraded: judge score withheld: 40% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-wrong_key_first20-silent-none-r2",
+   "plan": "wrong_key_first20",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.5833333333333334,
+   "valid_items": 0.85,
+   "affected": 20,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 20 of 60 items excluded (33%)",
+    "degraded: judge score withheld: 35% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-wrong_key_last20-silent-none-r1",
+   "plan": "wrong_key_last20",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6166666666666667,
+   "valid_items": 0.725,
+   "affected": 20,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 20 of 60 items excluded (33%)",
+    "degraded: judge score withheld: 35% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37022301998-v2-wrong_key_last20-silent-none-r2",
+   "plan": "wrong_key_last20",
+   "category": "infrastructure",
+   "pf": "none",
+   "policy": "silent",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.65,
+   "valid_items": 0.775,
+   "affected": 20,
+   "false_regression": true,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: 20 of 60 items excluded (33%)",
+    "degraded: judge score withheld: 35% of judge results excluded"
+   ]
+  }
+ ]
+}

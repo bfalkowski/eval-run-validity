@@ -66,6 +66,11 @@ def load_run(root, rid):
     m = re.search(r"-r(\d+)(?:-cf-|$)", rid)
     r["rep"] = int(m.group(1)) if m else None
     r["plan_name"] = r["pipeline"].get("plan") or ("clean" if "-clean-" in rid else None)
+    # An older collect.yml changed the real run in place (marker without "source_run").
+    # Those runs are skipped; current collect faults are separate "-cf-" copies.
+    r["clobbered"] = bool(r["collect"]) and "source_run" not in r["collect"]
+    if r["clobbered"]:
+        r["collect"] = None
     r["pf"] = (r["collect"] or {}).get("collect_fault") or r["pipeline"].get("pipeline_fault", "none")
     r["error_policy"] = r["pipeline"].get("error_policy", "loud")
     r["category"] = (r["plan"] or {}).get("plan", {}).get("category") or \
@@ -181,7 +186,9 @@ def main():
 
     runs = [load_run(root, os.path.basename(p)) for p in sorted(glob.glob(os.path.join(root, "runs", "*")))]
     missing = [r["id"] for r in runs if r["category"] is None]  # ground truth not collected (yet)
-    runs = [r for r in runs if r["manifest"] and r["manifest"].get("dataset") == "v2" and r["category"]]
+    clobbered = [r["id"] for r in runs if r["clobbered"]]
+    runs = [r for r in runs if r["manifest"] and r["manifest"].get("dataset") == "v2" and r["category"]
+            and not r["clobbered"]]
     current = [r for r in runs if r["manifest"]["policy_hash"] == baseline["policy_hash"]
                or r["category"] == "config_drift" or r["pf"] != "none"]
     reps = {"dev": {1, 2}, "heldout": {3, 4}}.get(a.split)
@@ -288,7 +295,8 @@ def main():
     if a.out:
         json.dump(S, open(a.out, "w"), indent=1, default=str)
     print(f"split {a.split}: {len(rows)} runs ({len(faulted)} faulted)"
-          + (f"; skipped {len(missing)} runs with no ground truth" if missing else ""))
+          + (f"; skipped {len(missing)} runs with no ground truth" if missing else "")
+          + (f"; skipped {len(clobbered)} runs changed in place by an old collect: {clobbered}" if clobbered else ""))
     n = S["noise_floor"]
     print(f"noise floor: {n['n']} clean runs, mean {pct(n['mean'])}%, sd {pct(n['sd'])}, range {pct(n['min'])}-{pct(n['max'])}%")
     q = S["rq1"]

@@ -1,0 +1,417 @@
+{
+ "split": "pipeline",
+ "runs": 20,
+ "faulted_runs": 0,
+ "noise_floor": {
+  "n": 13,
+  "mean": 0.8295,
+  "sd": 0.0194,
+  "min": 0.8,
+  "max": 0.8833
+ },
+ "rq1": {
+  "false_regression_rate": null,
+  "false_improvement_rate": null,
+  "by_category": {}
+ },
+ "rq2": {
+  "affected_items": 0,
+  "attribution_accuracy": null,
+  "per_category": {},
+  "confusion": {},
+  "unaffected_items_excluded": 0,
+  "unaffected_items": 0,
+  "judge_confusion": {}
+ },
+ "rq3": {
+  "should_flag": 20,
+  "flagged": 20,
+  "should_pass": 0,
+  "wrongly_flagged": 0,
+  "exact_level_match": 20,
+  "level_confusion": {
+   "degraded -> degraded": 5,
+   "invalid -> invalid": 15
+  }
+ },
+ "rq4": {
+  "clean_mean": 0.8294871794871795,
+  "valid_items_gap": {},
+  "median_abs_gap_valid_items": null,
+  "median_abs_gap_naive": null
+ },
+ "runs_detail": [
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "dep_drift",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8166666666666667,
+   "valid_items": 0.8166666666666667,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "dep_drift",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.85,
+   "valid_items": 0.85,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "job_timeout",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7857142857142857,
+   "valid_items": 0.7857142857142857,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: partial run: 28 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "job_timeout",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8,
+   "valid_items": 0.8,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: partial run: 20 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "job_timeout",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7,
+   "valid_items": 0.7,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: partial run: 20 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "kill_runner",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6923076923076923,
+   "valid_items": 0.6923076923076923,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: partial run: 13 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "kill_runner",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8181818181818182,
+   "valid_items": 0.8181818181818182,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: partial run: 11 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "kill_runner",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6666666666666666,
+   "valid_items": 0.6666666666666666,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: partial run: 12 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "missing_env",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7666666666666667,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: 14 of 60 items excluded (23%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "missing_env",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: 13 of 60 items excluded (22%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "missing_env",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: 13 of 60 items excluded (22%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "partial_upload",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.85,
+   "valid_items": 0.9375,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: no traces found",
+    "invalid: 44 of 60 items excluded (73%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "partial_upload",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": 0.9285714285714286,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: no traces found",
+    "invalid: 46 of 60 items excluded (77%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "partial_upload",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": 0.9333333333333333,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: no traces found",
+    "invalid: 45 of 60 items excluded (75%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "python_drift",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8166666666666667,
+   "valid_items": 0.8166666666666667,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "python_drift",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8333333333333334,
+   "valid_items": 0.8333333333333334,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "python_drift",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8166666666666667,
+   "valid_items": 0.8166666666666667,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "wrong_commit",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.9,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "degraded: 6 of 60 items excluded (10%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r2",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "wrong_commit",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8833333333333333,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "degraded: 7 of 60 items excluded (12%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r3",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "wrong_commit",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8833333333333333,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "degraded: 7 of 60 items excluded (12%)"
+   ]
+  }
+ ]
+}
