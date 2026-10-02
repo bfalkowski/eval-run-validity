@@ -1,0 +1,19 @@
+{
+ "fault_plan": "plans/wrong_key_last20.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "wrong_key on jev+judge, items 40..None",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "seed": 2,
+    "kind": "wrong_key",
+    "target": [
+     "jev",
+     "judge"
+    ],
+    "start_item": 40
+   }
+  ]
+ }
+}

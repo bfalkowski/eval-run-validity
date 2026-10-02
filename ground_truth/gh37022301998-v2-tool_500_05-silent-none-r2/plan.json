@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/tool_500_05.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "tool_500 on tool.*, 5% of calls",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "kind": "tool_500",
+    "target": "tool.*",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 2
+   }
+  ]
+ }
+}
