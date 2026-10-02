@@ -331,7 +331,8 @@
    "false_regression": true,
    "false_improvement": false,
    "reasons": [
-    "degraded: 8 of 60 items excluded (13%)"
+    "degraded: 8 of 60 items excluded (13%)",
+    "degraded: judge score withheld: 15% of judge results excluded"
    ]
   },
   {
@@ -349,7 +350,8 @@
    "false_regression": true,
    "false_improvement": false,
    "reasons": [
-    "degraded: 8 of 60 items excluded (13%)"
+    "degraded: 8 of 60 items excluded (13%)",
+    "degraded: judge score withheld: 15% of judge results excluded"
    ]
   },
   {

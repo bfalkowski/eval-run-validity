@@ -1,6 +1,6 @@
 {
  "split": "pipeline",
- "runs": 20,
+ "runs": 69,
  "faulted_runs": 0,
  "noise_floor": {
   "n": 13,
@@ -24,14 +24,14 @@
   "judge_confusion": {}
  },
  "rq3": {
-  "should_flag": 20,
-  "flagged": 20,
+  "should_flag": 69,
+  "flagged": 69,
   "should_pass": 0,
   "wrongly_flagged": 0,
-  "exact_level_match": 20,
+  "exact_level_match": 69,
   "level_confusion": {
-   "degraded -> degraded": 5,
-   "invalid -> invalid": 15
+   "degraded -> degraded": 6,
+   "invalid -> invalid": 63
   }
  },
  "rq4": {
@@ -41,6 +41,67 @@
   "median_abs_gap_naive": null
  },
  "runs_detail": [
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r1",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "dep_drift",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "degraded",
+   "gate": "degraded",
+   "naive": 0.8666666666666667,
+   "valid_items": 0.8666666666666667,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8666666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8416666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-dep_drift-r2']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
   {
    "run": "gh37023643915-v2-clean-loud-dep_drift-r2",
    "plan": "clean",
@@ -57,6 +118,49 @@
    "false_improvement": false,
    "reasons": [
     "degraded: environment differs from baseline in ['packages']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8333333333333334,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-dep_drift-r3']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
    ]
   },
   {
@@ -78,6 +182,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.85,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-dep_drift-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8295454545454546,
+   "valid_items": 0.875,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['packages']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['bf2d8f1337703a87', 'gh37023643915-v2-clean-loud-job_timeout-r1']",
+    "invalid: 28 of 88 items excluded (32%)",
+    "degraded: judge score withheld: 34% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-job_timeout-r1",
    "plan": "clean",
    "category": "clean",
@@ -93,6 +240,49 @@
    "false_improvement": false,
    "reasons": [
     "invalid: partial run: 28 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7857142857142857,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: partial run: 28 of 60 items finished",
+    "invalid: 28 of 56 items excluded (50%)",
+    "degraded: judge score withheld: 50% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7916666666666666,
+   "valid_items": 0.875,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-job_timeout-r2']",
+    "invalid: partial run: 28 of 60 items finished",
+    "invalid: 20 of 48 items excluded (42%)",
+    "degraded: judge score withheld: 42% of judge results excluded"
    ]
   },
   {
@@ -114,6 +304,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: partial run: 20 of 60 items finished",
+    "invalid: 20 of 40 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.75,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-job_timeout-r3']",
+    "invalid: partial run: 20 of 60 items finished",
+    "invalid: 20 of 40 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-job_timeout-r3",
    "plan": "clean",
    "category": "clean",
@@ -129,6 +362,49 @@
    "false_improvement": false,
    "reasons": [
     "invalid: partial run: 20 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: partial run: 20 of 60 items finished",
+    "invalid: 20 of 40 items excluded (50%)",
+    "degraded: judge score withheld: 50% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-job_timeout-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.696969696969697,
+   "valid_items": 0.7142857142857143,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-kill_runner-r1']",
+    "invalid: partial run: 20 of 60 items finished",
+    "invalid: 13 of 33 items excluded (39%)",
+    "degraded: judge score withheld: 39% of judge results excluded"
    ]
   },
   {
@@ -150,6 +426,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6923076923076923,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: partial run: 13 of 60 items finished",
+    "invalid: 13 of 26 items excluded (50%)",
+    "degraded: judge score withheld: 50% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.75,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-kill_runner-r2']",
+    "invalid: partial run: 13 of 60 items finished",
+    "invalid: 11 of 24 items excluded (46%)",
+    "degraded: judge score withheld: 46% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-kill_runner-r2",
    "plan": "clean",
    "category": "clean",
@@ -168,6 +487,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8181818181818182,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: partial run: 11 of 60 items finished",
+    "invalid: 11 of 22 items excluded (50%)",
+    "degraded: judge score withheld: 55% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7391304347826086,
+   "valid_items": 1.0,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-kill_runner-r3']",
+    "invalid: partial run: 12 of 60 items finished",
+    "invalid: 11 of 23 items excluded (48%)",
+    "degraded: judge score withheld: 57% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-kill_runner-r3",
    "plan": "clean",
    "category": "clean",
@@ -183,6 +545,48 @@
    "false_improvement": false,
    "reasons": [
     "invalid: partial run: 12 of 60 items finished"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.6666666666666666,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: partial run: 12 of 60 items finished",
+    "invalid: 12 of 24 items excluded (50%)",
+    "degraded: judge score withheld: 50% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-kill_runner-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.75,
+   "valid_items": 0.9333333333333333,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['8f875b8723b4b4b4', 'gh37023643915-v2-clean-loud-missing_env-r1']",
+    "invalid: 45 of 72 items excluded (62%)",
+    "degraded: judge score withheld: 83% of judge results excluded"
    ]
   },
   {
@@ -205,6 +609,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7666666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 74 of 120 items excluded (62%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.775,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-missing_env-r2']",
+    "invalid: 74 of 120 items excluded (62%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-missing_env-r2",
    "plan": "clean",
    "category": "clean",
@@ -221,6 +668,49 @@
    "reasons": [
     "invalid: undeclared change from baseline in ['policy_hash']",
     "invalid: 13 of 60 items excluded (22%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 73 of 120 items excluded (61%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-missing_env-r3']",
+    "invalid: 73 of 120 items excluded (61%)",
+    "degraded: judge score withheld: 53% of judge results excluded"
    ]
   },
   {
@@ -243,6 +733,172 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 73 of 120 items excluded (61%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-missing_env-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8083333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['bf2d8f1337703a87', 'gh37023643915-v2-clean-loud-none-r1']",
+    "invalid: 73 of 120 items excluded (61%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-none-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8333333333333334,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-none-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.825,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-none-r2']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-none-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-none-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.825,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-none-r3']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-none-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8333333333333334,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-none-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8416666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-partial_upload-r1']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-partial_upload-r1",
    "plan": "clean",
    "category": "clean",
@@ -259,6 +915,49 @@
    "reasons": [
     "invalid: no traces found",
     "invalid: 44 of 60 items excluded (73%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.85,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: no traces found",
+    "invalid: 104 of 120 items excluded (87%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-partial_upload-r2']",
+    "invalid: no traces found",
+    "invalid: 104 of 120 items excluded (87%)",
     "degraded: judge score withheld: 100% of judge results excluded"
    ]
   },
@@ -283,6 +982,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.7833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: no traces found",
+    "invalid: 106 of 120 items excluded (88%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-partial_upload-r3']",
+    "invalid: no traces found",
+    "invalid: 106 of 120 items excluded (88%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-partial_upload-r3",
    "plan": "clean",
    "category": "clean",
@@ -299,6 +1041,49 @@
    "reasons": [
     "invalid: no traces found",
     "invalid: 45 of 60 items excluded (75%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: no traces found",
+    "invalid: 105 of 120 items excluded (88%)",
+    "degraded: judge score withheld: 100% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-partial_upload-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['ea0e7fbca94bd1fc', 'gh37023643915-v2-clean-loud-python_drift-r1']",
+    "invalid: no traces found",
+    "invalid: 105 of 120 items excluded (88%)",
     "degraded: judge score withheld: 100% of judge results excluded"
    ]
   },
@@ -321,6 +1106,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.825,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-python_drift-r2']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-python_drift-r2",
    "plan": "clean",
    "category": "clean",
@@ -339,6 +1167,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8333333333333334,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.825,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-python_drift-r3']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 52% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-python_drift-r3",
    "plan": "clean",
    "category": "clean",
@@ -354,6 +1225,49 @@
    "false_improvement": false,
    "reasons": [
     "degraded: environment differs from baseline in ['python_version']"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8166666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-python_drift-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8583333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "degraded: environment differs from baseline in ['python_version']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['adbf064fb030a3bc', 'gh37023643915-v2-clean-loud-wrong_commit-r1']",
+    "invalid: 60 of 120 items excluded (50%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
    ]
   },
   {
@@ -376,6 +1290,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r1-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.9,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 66 of 120 items excluded (55%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r1-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 1,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8916666666666667,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-wrong_commit-r2']",
+    "invalid: 66 of 120 items excluded (55%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-wrong_commit-r2",
    "plan": "clean",
    "category": "clean",
@@ -395,6 +1352,49 @@
    ]
   },
   {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r2-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 67 of 120 items excluded (56%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r2-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 2,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-wrong_commit-r3']",
+    "invalid: 67 of 120 items excluded (56%)",
+    "degraded: judge score withheld: 51% of judge results excluded"
+   ]
+  },
+  {
    "run": "gh37023643915-v2-clean-loud-wrong_commit-r3",
    "plan": "clean",
    "category": "clean",
@@ -411,6 +1411,49 @@
    "reasons": [
     "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
     "degraded: 7 of 60 items excluded (12%)"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r3-cf-duplicate_merge",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "duplicate_merge",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.8833333333333333,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: 67 of 120 items excluded (56%)",
+    "degraded: judge score withheld: 50% of judge results excluded"
+   ]
+  },
+  {
+   "run": "gh37023643915-v2-clean-loud-wrong_commit-r3-cf-mixed_runs",
+   "plan": "clean",
+   "category": "clean",
+   "pf": "mixed_runs",
+   "policy": "loud",
+   "rep": 3,
+   "truth": "invalid",
+   "gate": "invalid",
+   "naive": 0.875,
+   "valid_items": null,
+   "affected": 0,
+   "false_regression": false,
+   "false_improvement": false,
+   "reasons": [
+    "invalid: undeclared change from baseline in ['policy_hash', 'agent_code_hash']",
+    "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+    "invalid: results from another run or config mixed in: ['ce42eb22920678db', 'gh37023643915-v2-clean-loud-dep_drift-r1']",
+    "invalid: 67 of 120 items excluded (56%)",
+    "degraded: judge score withheld: 50% of judge results excluded"
    ]
   }
  ]

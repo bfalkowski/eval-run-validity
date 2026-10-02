@@ -68,9 +68,10 @@ def load_run(root, rid):
     r["plan_name"] = r["pipeline"].get("plan") or ("clean" if "-clean-" in rid else None)
     # An older collect.yml changed the real run in place (marker without "source_run").
     # Those runs are skipped; current collect faults are separate "-cf-" copies.
-    r["clobbered"] = bool(r["collect"]) and "source_run" not in r["collect"]
-    if r["clobbered"]:
-        r["collect"] = None
+    r["clobbered"] = (bool(r["collect"]) and "source_run" not in r["collect"]
+                      and len(r["items"]) > (r["manifest"] or {}).get("planned_items", 0))
+    if r["collect"] and "source_run" not in r["collect"]:
+        r["collect"] = None  # stale marker from the old collect step; the run itself was restored
     r["pf"] = (r["collect"] or {}).get("collect_fault") or r["pipeline"].get("pipeline_fault", "none")
     r["error_policy"] = r["pipeline"].get("error_policy", "loud")
     r["category"] = (r["plan"] or {}).get("plan", {}).get("category") or \
