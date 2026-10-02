@@ -1,0 +1,25 @@
+{
+ "ok": false,
+ "checks": [
+  {
+   "name": "data_checksums",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "jev_canary",
+   "ok": false,
+   "detail": "connection_error"
+  },
+  {
+   "name": "judge_canary",
+   "ok": true,
+   "detail": "noul 0.93"
+  },
+  {
+   "name": "scorer_canary",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

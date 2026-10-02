@@ -1,0 +1,20 @@
+{
+ "fault_plan": "plans/jev_timeout_25.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "timeout on jev, 25% of calls",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "kind": "timeout",
+    "target": "jev",
+    "rate": 0.25,
+    "start_item": 0,
+    "seed": 4,
+    "params": {
+     "delay_s": 0.2
+    }
+   }
+  ]
+ }
+}

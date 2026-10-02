@@ -1,0 +1,20 @@
+{
+ "fault_plan": "plans/jev_slow.json",
+ "fault_seed": 3,
+ "plan": {
+  "description": "slow on jev, items 0..None",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "seed": 3,
+    "kind": "slow",
+    "target": "jev",
+    "rate": 0.25,
+    "start_item": 0,
+    "params": {
+     "delay_s": 0.3
+    }
+   }
+  ]
+ }
+}

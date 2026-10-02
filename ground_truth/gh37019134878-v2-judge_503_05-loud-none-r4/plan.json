@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/judge_503_05.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "http_503 on judge, 5% of calls",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "kind": "http_503",
+    "target": "judge",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 4
+   }
+  ]
+ }
+}

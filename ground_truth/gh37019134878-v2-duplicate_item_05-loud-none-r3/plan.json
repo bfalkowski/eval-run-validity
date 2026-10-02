@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/duplicate_item_05.json",
+ "fault_seed": 3,
+ "plan": {
+  "description": "duplicate_item on dataset, 5% of calls",
+  "category": "task_defect",
+  "faults": [
+   {
+    "kind": "duplicate_item",
+    "target": "dataset",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 3
+   }
+  ]
+ }
+}

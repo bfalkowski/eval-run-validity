@@ -1,0 +1,15 @@
+{
+ "fault_plan": "plans/jev_down_all.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "down on jev, items None..None",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "seed": 4,
+    "kind": "down",
+    "target": "jev"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "fault_plan": "plans/template_edit.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "template_edit, undeclared",
+  "category": "config_drift",
+  "faults": [
+   {
+    "kind": "template_edit",
+    "target": "config",
+    "seed": 4
+   }
+  ]
+ }
+}

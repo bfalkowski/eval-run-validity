@@ -1,0 +1,16 @@
+{
+ "fault_plan": "plans/jev_401_mid.json",
+ "fault_seed": 3,
+ "plan": {
+  "description": "http_401 on jev, items 30..None",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "seed": 3,
+    "kind": "http_401",
+    "target": "jev",
+    "start_item": 30
+   }
+  ]
+ }
+}

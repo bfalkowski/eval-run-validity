@@ -1,0 +1,20 @@
+{
+ "fault_plan": "plans/jev_flap.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "http_503 on jev+judge, items 10..17",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "seed": 4,
+    "kind": "http_503",
+    "target": [
+     "jev",
+     "judge"
+    ],
+    "start_item": 10,
+    "end_item": 17
+   }
+  ]
+ }
+}

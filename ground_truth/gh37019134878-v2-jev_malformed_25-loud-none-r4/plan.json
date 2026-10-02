@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/jev_malformed_25.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "malformed on jev, 25% of calls",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "kind": "malformed",
+    "target": "jev",
+    "rate": 0.25,
+    "start_item": 0,
+    "seed": 4
+   }
+  ]
+ }
+}

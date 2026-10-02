@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/judge_flip_05.json",
+ "fault_seed": 3,
+ "plan": {
+  "description": "flip on judge, 5% of calls",
+  "category": "judge_failure",
+  "faults": [
+   {
+    "kind": "flip",
+    "target": "judge",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 3
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "fault_plan": "plans/prompt_edit.json",
+ "fault_seed": 4,
+ "plan": {
+  "description": "prompt_edit, undeclared",
+  "category": "config_drift",
+  "faults": [
+   {
+    "kind": "prompt_edit",
+    "target": "config",
+    "seed": 4
+   }
+  ]
+ }
+}

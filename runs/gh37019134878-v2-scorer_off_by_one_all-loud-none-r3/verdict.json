@@ -1,0 +1,31 @@
+{
+ "run_id": "gh37019134878-v2-scorer_off_by_one_all-loud-none-r3",
+ "verdict": "invalid",
+ "reasons": [
+  "invalid: preflight failed: scorer_canary (wrong on goldens [0, 1, 3, 5, 7, 10])"
+ ],
+ "planned_items": 60,
+ "completed_items": 0,
+ "score": {
+  "naive": null,
+  "valid_items": null,
+  "n_valid_items": 0,
+  "excluded_rate": 0.0
+ },
+ "judge_score": {
+  "naive": null,
+  "valid_items": null,
+  "excluded_rate": 0.0
+ },
+ "categories": {},
+ "judge_categories": {},
+ "missed_items": [],
+ "missed_judge_items": [],
+ "retries_absorbed": 0,
+ "drift": {
+  "critical": [],
+  "warn": [],
+  "baseline": "gh37012503737-v2-clean-loud-none"
+ },
+ "items": []
+}
