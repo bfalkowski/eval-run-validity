@@ -4,19 +4,20 @@
  "reasons": [
   "degraded: environment differs from baseline in ['packages']",
   "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+  "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-dep_drift-r2']",
   "invalid: 60 of 120 items excluded (50%)",
   "degraded: judge score withheld: 52% of judge results excluded"
  ],
  "planned_items": 60,
  "completed_items": 60,
  "score": {
-  "naive": 0.8666666666666667,
+  "naive": 0.8416666666666667,
   "valid_items": null,
   "n_valid_items": 60,
   "excluded_rate": 0.5
  },
  "judge_score": {
-  "naive": 0.85,
+  "naive": 0.8833333333333333,
   "valid_items": null,
   "excluded_rate": 0.5166666666666666
  },
