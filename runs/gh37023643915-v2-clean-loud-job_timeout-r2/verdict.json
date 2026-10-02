@@ -1,0 +1,240 @@
+{
+ "run_id": "gh37023643915-v2-clean-loud-job_timeout-r2",
+ "verdict": "invalid",
+ "reasons": [
+  "invalid: partial run: 20 of 60 items finished"
+ ],
+ "planned_items": 60,
+ "completed_items": 20,
+ "score": {
+  "naive": 0.8,
+  "valid_items": null,
+  "n_valid_items": 20,
+  "excluded_rate": 0.0
+ },
+ "judge_score": {
+  "naive": 0.85,
+  "valid_items": null,
+  "excluded_rate": 0.050000000000000044
+ },
+ "categories": {
+  "ok": 16,
+  "model_failure": 4
+ },
+ "judge_categories": {
+  "ok": 19,
+  "judge_failure": 1
+ },
+ "missed_items": [],
+ "missed_judge_items": [],
+ "retries_absorbed": 0,
+ "drift": {
+  "critical": [],
+  "warn": [],
+  "baseline": "gh37012503737-v2-clean-loud-none"
+ },
+ "items": [
+  {
+   "item_index": 0,
+   "ticket_id": "V001",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 1,
+   "ticket_id": "V002",
+   "primary": "ok",
+   "judge": "judge_failure",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "judge repeats disagree"
+   ]
+  },
+  {
+   "item_index": 2,
+   "ticket_id": "V003",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 3,
+   "ticket_id": "V004",
+   "primary": "model_failure",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 4,
+   "ticket_id": "V005",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 5,
+   "ticket_id": "V006",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 6,
+   "ticket_id": "V007",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 7,
+   "ticket_id": "V008",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 8,
+   "ticket_id": "V009",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 9,
+   "ticket_id": "V010",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 10,
+   "ticket_id": "V011",
+   "primary": "model_failure",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 11,
+   "ticket_id": "V012",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 12,
+   "ticket_id": "V013",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 13,
+   "ticket_id": "V014",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 14,
+   "ticket_id": "V015",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 15,
+   "ticket_id": "V016",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 16,
+   "ticket_id": "V017",
+   "primary": "model_failure",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 17,
+   "ticket_id": "V018",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 18,
+   "ticket_id": "V019",
+   "primary": "model_failure",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 19,
+   "ticket_id": "V020",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  }
+ ]
+}
