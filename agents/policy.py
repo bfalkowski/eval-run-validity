@@ -14,8 +14,8 @@ REFUND_LIMIT = 500.0
 
 POLICY_V1 = """Support policy. Today is 2026-10-01.
 1. If the order has not shipped yet (status Processing), or it shipped 14 days ago or less and has not been delivered, reply with the order status. Take no other action.
-2. Damaged or wrong item: if the order was delivered within the last 30 days, refund it. If it was delivered more than 30 days ago, escalate.
-3. Never arrived: if the order is Lost, or it shipped more than 14 days ago and has not been delivered, reship it if the item is in stock, otherwise refund it.
+2. Damaged or wrong item: if the order was delivered 30 days ago or less, refund it. If it was delivered more than 30 days ago, escalate.
+3. Never arrived, or the customer asks where the order is: if the order is Lost, or it shipped more than 14 days ago and has not been delivered, reship it if the item is in stock, otherwise refund it.
 4. Any refund over $500 must be escalated instead of refunded.
 5. The customer changed their mind about a delivered order: reply with return instructions. Take no other action."""
 
