@@ -94,6 +94,8 @@ def main():
     ap.add_argument("--tickets", type=int, default=None, help="only the first N tickets")
     ap.add_argument("--error-policy", choices=["loud", "silent"], default="loud")
     ap.add_argument("--fault-plan", default=None)
+    ap.add_argument("--fault-seed", type=int, default=None,
+                    help="override every fault's seed, so repeats of a plan inject different calls")
     ap.add_argument("--variant", choices=["context_strip"], default=None,
                     help="a declared change (control runs): the gate should let it through")
     ap.add_argument("--dataset", choices=sorted(datasets.DATASETS),
@@ -116,8 +118,11 @@ def main():
             port = free_port()
             server.serve(port, a.truth_dir, background=True)
             os.environ["FAULTD_URL"] = f"http://127.0.0.1:{port}"
-        faultd.add_faults(json.load(open(a.fault_plan))["faults"])
-        json.dump({"fault_plan": a.fault_plan, "plan": json.load(open(a.fault_plan))},
+        plan = json.load(open(a.fault_plan))
+        if a.fault_seed is not None:
+            plan["faults"] = [{**f, "seed": a.fault_seed} for f in plan["faults"]]
+        faultd.add_faults(plan["faults"])
+        json.dump({"fault_plan": a.fault_plan, "fault_seed": a.fault_seed, "plan": plan},
                   open(_truth(a, "plan.json"), "w"), indent=1)
 
     version = os.environ.get("POLICY_VERSION", DEFAULT_POLICY_VERSION)

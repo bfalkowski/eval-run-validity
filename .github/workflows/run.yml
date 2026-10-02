@@ -1,7 +1,7 @@
 name: run
 # Start eval runs by hand. One job per fault plan.
 #   plans:          JSON list of plan names from plans/ ("clean" for no faults)
-#   pipeline_fault: a fault in this workflow itself, applied to every job
+#   pipeline_faults: faults in this workflow itself (one job per plan x fault x rep)
 # Ground truth (what was injected) is uploaded as a separate artifact that the
 # gate never reads.
 on:
@@ -24,10 +24,9 @@ on:
         default: v2
       tickets:
         default: "60"
-      pipeline_fault:
-        type: choice
-        default: none
-        options: [none, kill_runner, job_timeout, partial_upload, dep_drift, python_drift, missing_env, wrong_commit]
+      pipeline_faults:
+        description: 'JSON list: none, kill_runner, job_timeout, partial_upload, dep_drift, python_drift, missing_env, wrong_commit'
+        default: '["none"]'
       reps:
         description: 'Repeats of each plan as a JSON list, e.g. [1,2,3]'
         default: '[1]'
@@ -39,19 +38,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 4
       matrix:
         plan: ${{ fromJSON(inputs.plans) }}
         rep: ${{ fromJSON(inputs.reps) }}
+        pf: ${{ fromJSON(inputs.pipeline_faults) }}
     env:
-      RUN_ID: gh${{ github.run_id }}-${{ inputs.dataset }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ inputs.pipeline_fault }}-r${{ matrix.rep }}
+      RUN_ID: gh${{ github.run_id }}-${{ inputs.dataset }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ matrix.pf }}-r${{ matrix.rep }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: "pipeline fault: wrong commit of agents/"
-        if: inputs.pipeline_fault == 'wrong_commit'
+        if: matrix.pf == 'wrong_commit'
         run: |
           old=$(git log -n 1 --skip 1 --format=%H -- agents/)
           echo "checking out agents/ from $old"
@@ -59,11 +59,11 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ inputs.pipeline_fault == 'python_drift' && '3.12' || '3.11' }}
+          python-version: ${{ matrix.pf == 'python_drift' && '3.12' || '3.11' }}
 
       - name: Install
         run: |
-          if [ "${{ inputs.pipeline_fault }}" = "dep_drift" ]; then
+          if [ "${{ matrix.pf }}" = "dep_drift" ]; then
             # what an unpinned install looks like when the resolver picks other versions
             pip install "opentelemetry-api<1.45" "opentelemetry-sdk<1.45"
           else
@@ -76,12 +76,12 @@ jobs:
           JEV_BACKEND: ${{ inputs.backend == 'stub' && 'stub' || '' }}
           JEV_STUB_LATENCY_S: "0.1"
           MAX_SPEND_USD: ${{ inputs.max_spend_usd }}
-          PF: ${{ inputs.pipeline_fault }}
+          PF: ${{ matrix.pf }}
           DATASET: ${{ inputs.dataset }}
         run: |
           if [ "$PF" != "missing_env" ]; then export POLICY_VERSION=v1; fi
           args="--run-id $RUN_ID --tickets ${{ inputs.tickets }} --error-policy ${{ inputs.error_policy }}"
-          if [ "${{ matrix.plan }}" != "clean" ]; then args="$args --fault-plan plans/${{ matrix.plan }}.json"; fi
+          if [ "${{ matrix.plan }}" != "clean" ]; then args="$args --fault-plan plans/${{ matrix.plan }}.json --fault-seed ${{ matrix.rep }}"; fi
           case "$PF" in
             kill_runner)
               python run.py $args & pid=$!
@@ -97,7 +97,7 @@ jobs:
         run: |
           mkdir -p ground_truth/$RUN_ID
           printf '{"run_id":"%s","plan":"%s","pipeline_fault":"%s","error_policy":"%s","backend":"%s"}\n' \
-            "$RUN_ID" "${{ matrix.plan }}" "${{ inputs.pipeline_fault }}" "${{ inputs.error_policy }}" "${{ inputs.backend }}" \
+            "$RUN_ID" "${{ matrix.plan }}" "${{ matrix.pf }}" "${{ inputs.error_policy }}" "${{ inputs.backend }}" \
             > ground_truth/$RUN_ID/pipeline.json
 
       - name: No secrets in run outputs
@@ -111,7 +111,7 @@ jobs:
           docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.28.0 dir /repo/runs --redact --exit-code 1
 
       - name: "pipeline fault: partial upload"
-        if: inputs.pipeline_fault == 'partial_upload'
+        if: matrix.pf == 'partial_upload'
         run: rm -f runs/$RUN_ID/traces.jsonl
 
       - uses: actions/upload-artifact@v4
