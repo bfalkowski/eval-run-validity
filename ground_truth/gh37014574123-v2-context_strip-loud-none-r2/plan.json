@@ -1,0 +1,15 @@
+{
+ "fault_plan": "plans/context_strip.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "context_strip, undeclared",
+  "category": "config_drift",
+  "faults": [
+   {
+    "kind": "context_strip",
+    "target": "config",
+    "seed": 2
+   }
+  ]
+ }
+}

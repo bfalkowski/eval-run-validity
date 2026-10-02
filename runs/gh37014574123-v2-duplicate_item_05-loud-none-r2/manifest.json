@@ -1,0 +1,38 @@
+{
+ "run_id": "gh37014574123-v2-duplicate_item_05-loud-none-r2",
+ "created_at": "2026-10-02T13:41:43Z",
+ "planned_items": 62,
+ "model": "jev-latest",
+ "dataset": "v2",
+ "policy_version": "v1",
+ "policy_hash": "0d31d306e0298904",
+ "decision_instructions_hash": "4edd548d54061ef3",
+ "judge_instructions_hash": "65288897c3f2098c",
+ "context_fields": [
+  "order",
+  "policy",
+  "stock",
+  "ticket",
+  "today"
+ ],
+ "dataset_hash": "4d30c0e39fc908bd",
+ "agent_code_hash": "220025a64d0110a3",
+ "scorer_code_hash": "7d99279c00bb6e30",
+ "packages": {
+  "opentelemetry-api": "1.45.0",
+  "opentelemetry-sdk": "1.45.0"
+ },
+ "lockfile_hash": "1a1b30a934c573f0",
+ "python_version": "3.11",
+ "error_policy": "loud",
+ "declared_changes": [],
+ "git_commit": "ed740c9a607afb0e2b72d3292af3f9d812acf881",
+ "runner": {
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "ci": true,
+  "github_run_id": "37014574123",
+  "runner_name": "GitHub Actions 1000001833"
+ },
+ "jev_backend": "api",
+ "manifest_hash": "9920d7d76480b55c"
+}
