@@ -22,12 +22,17 @@ Item-level ground truth is rebuilt from the injection log alone:
 """
 
 import argparse
+import copy
+import sys
 import glob
 import json
 import os
 import re
 import statistics
 from collections import Counter, defaultdict
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from agents.policy import resolve  # noqa: E402
 
 RETRYABLE = {"http_503", "http_429", "timeout", "down"}
 ATTEMPTS = 3
@@ -67,7 +72,18 @@ def load_run(root, rid):
     return r
 
 
-def item_truth(run, expected_by_ticket):
+def stale_changes_answer(ticket, fixture):
+    """Mirror run.py's stale_fixture mutation; True if the expected answer no
+    longer fits the changed order (otherwise the stale record is harmless)."""
+    o = copy.deepcopy(fixture["orders"][str(ticket["order_id"])])
+    if o["status"] == "Delivered":
+        o["status"], o["delivered_on"] = "Shipped", None
+    else:
+        o["status"], o["delivered_on"] = "Delivered", "2026-09-28"
+    return resolve(ticket["issue"], o, fixture["stock"][o["sku"]]) != ticket["expected"]
+
+
+def item_truth(run, expected_by_ticket, tickets=None, fixture=None):
     """{item_index: (primary_cause, judge_cause)} for items a fault actually affected."""
     items = sorted(run["items"], key=lambda i: i["item_index"])
     by_idx = {i["item_index"]: i for i in items}
@@ -92,7 +108,9 @@ def item_truth(run, expected_by_ticket):
         elif tgt.startswith("tool."):
             truth[i][0] = "infrastructure"
         elif tgt == "fixtures":
-            truth[out_idx(i)][0] = "task_defect"
+            t = by_idx.get(out_idx(i))
+            if k == "removed_record" or (t and tickets and stale_changes_answer(tickets[t["ticket_id"]], fixture)):
+                truth[out_idx(i)][0] = "task_defect"
         elif tgt == "dataset":
             truth[out_idx(i) + 1][0] = "task_defect"
         elif tgt == "scorer" and k == "off_by_one":
@@ -149,6 +167,7 @@ def main():
     root = a.data_root
     tickets = {t["ticket_id"]: t for t in jl(os.path.join(os.path.dirname(__file__), "..", "data", "v2", "tickets.jsonl"))}
     expected = {k: t["expected"] for k, t in tickets.items()}
+    fixture = json.load(open(os.path.join(os.path.dirname(__file__), "..", "data", "v2", "orders.json")))
     baseline = json.load(open(os.path.join(os.path.dirname(__file__), "..", "baselines", "manifest_v2.json")))
 
     runs = [load_run(root, os.path.basename(p)) for p in sorted(glob.glob(os.path.join(root, "runs", "*")))]
@@ -172,7 +191,7 @@ def main():
     for r in sel:
         v = r["verdict"]
         planned = r["manifest"]["planned_items"]
-        truth = item_truth(r, expected)
+        truth = item_truth(r, expected, tickets, fixture)
         t_level = run_truth(r, truth, planned)
         g_level = v["verdict"]
         conf_run[(t_level, g_level)] += 1
@@ -265,6 +284,7 @@ def main():
         print(f"    {c:15s} n {d['n']:4d}  recall {pct(d['recall'])}  precision {pct(d['precision'])}")
     for k, v in q["confusion"].items():
         print(f"      {k}: {v}")
+    print("    judge:", q["judge_confusion"])
     q = S["rq3"]
     print(f"RQ3 gate flagged {q['flagged']} of {q['should_flag']} runs that should be flagged; "
           f"wrongly flagged {q['wrongly_flagged']} of {q['should_pass']}; exact level {q['exact_level_match']} of {len(rows)}")
