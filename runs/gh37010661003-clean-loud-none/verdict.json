@@ -1,0 +1,637 @@
+{
+ "run_id": "gh37010661003-clean-loud-none",
+ "verdict": "valid",
+ "reasons": [],
+ "planned_items": 60,
+ "completed_items": 60,
+ "score": {
+  "naive": 1.0,
+  "valid_items": 1.0,
+  "n_valid_items": 60,
+  "excluded_rate": 0.0
+ },
+ "judge_score": {
+  "naive": 1.0,
+  "valid_items": 1.0,
+  "excluded_rate": 0.01666666666666672
+ },
+ "categories": {
+  "ok": 60
+ },
+ "judge_categories": {
+  "ok": 59,
+  "judge_failure": 1
+ },
+ "missed_items": [],
+ "missed_judge_items": [],
+ "retries_absorbed": 0,
+ "drift": {
+  "critical": [],
+  "warn": [],
+  "baseline": "baseline-stub"
+ },
+ "items": [
+  {
+   "item_index": 0,
+   "ticket_id": "T001",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 1,
+   "ticket_id": "T002",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 2,
+   "ticket_id": "T003",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 3,
+   "ticket_id": "T004",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 4,
+   "ticket_id": "T005",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 5,
+   "ticket_id": "T006",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 6,
+   "ticket_id": "T007",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 7,
+   "ticket_id": "T008",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 8,
+   "ticket_id": "T009",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 9,
+   "ticket_id": "T010",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 10,
+   "ticket_id": "T011",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 11,
+   "ticket_id": "T012",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 12,
+   "ticket_id": "T013",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 13,
+   "ticket_id": "T014",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 14,
+   "ticket_id": "T015",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 15,
+   "ticket_id": "T016",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 16,
+   "ticket_id": "T017",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 17,
+   "ticket_id": "T018",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 18,
+   "ticket_id": "T019",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 19,
+   "ticket_id": "T020",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 20,
+   "ticket_id": "T021",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 21,
+   "ticket_id": "T022",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 22,
+   "ticket_id": "T023",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 23,
+   "ticket_id": "T024",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 24,
+   "ticket_id": "T025",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 25,
+   "ticket_id": "T026",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 26,
+   "ticket_id": "T027",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 27,
+   "ticket_id": "T028",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 28,
+   "ticket_id": "T029",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 29,
+   "ticket_id": "T030",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 30,
+   "ticket_id": "T031",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 31,
+   "ticket_id": "T032",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 32,
+   "ticket_id": "T033",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 33,
+   "ticket_id": "T034",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 34,
+   "ticket_id": "T035",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 35,
+   "ticket_id": "T036",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 36,
+   "ticket_id": "T037",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 37,
+   "ticket_id": "T038",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 38,
+   "ticket_id": "T039",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 39,
+   "ticket_id": "T040",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 40,
+   "ticket_id": "T041",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 41,
+   "ticket_id": "T042",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 42,
+   "ticket_id": "T043",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 43,
+   "ticket_id": "T044",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 44,
+   "ticket_id": "T045",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 45,
+   "ticket_id": "T046",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 46,
+   "ticket_id": "T047",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 47,
+   "ticket_id": "T048",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 48,
+   "ticket_id": "T049",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 49,
+   "ticket_id": "T050",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 50,
+   "ticket_id": "T051",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 51,
+   "ticket_id": "T052",
+   "primary": "ok",
+   "judge": "judge_failure",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "judge repeats disagree"
+   ]
+  },
+  {
+   "item_index": 52,
+   "ticket_id": "T053",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 53,
+   "ticket_id": "T054",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 54,
+   "ticket_id": "T055",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 55,
+   "ticket_id": "T056",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 56,
+   "ticket_id": "T057",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 57,
+   "ticket_id": "T058",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 58,
+   "ticket_id": "T059",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 59,
+   "ticket_id": "T060",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  }
+ ]
+}
