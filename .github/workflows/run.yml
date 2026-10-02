@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       plans:
-        description: 'JSON list of plans, e.g. ["clean","jev_503_25","wrong_key_first20"]'
+        description: 'JSON list of plans from plans/, plus "clean" and "control" (declared change)'
         default: '["clean"]'
       error_policy:
         type: choice
@@ -81,7 +81,11 @@ jobs:
         run: |
           if [ "$PF" != "missing_env" ]; then export POLICY_VERSION=v1; fi
           args="--run-id $RUN_ID --tickets ${{ inputs.tickets }} --error-policy ${{ inputs.error_policy }}"
-          if [ "${{ matrix.plan }}" != "clean" ]; then args="$args --fault-plan plans/${{ matrix.plan }}.json --fault-seed ${{ matrix.rep }}"; fi
+          case "${{ matrix.plan }}" in
+            clean) ;;
+            control) args="$args --variant context_strip" ;;
+            *) args="$args --fault-plan plans/${{ matrix.plan }}.json --fault-seed ${{ matrix.rep }}" ;;
+          esac
           case "$PF" in
             kill_runner)
               python run.py $args & pid=$!
