@@ -1,0 +1,16 @@
+{
+ "fault_plan": "plans/scorer_off_by_one_all.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "off_by_one on scorer, items None..None",
+  "category": "harness_bug",
+  "faults": [
+   {
+    "seed": 2,
+    "kind": "off_by_one",
+    "target": "scorer",
+    "rate": 1.0
+   }
+  ]
+ }
+}

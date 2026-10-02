@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/no_reset_05.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "no_reset on harness, 5% of calls",
+  "category": "harness_bug",
+  "faults": [
+   {
+    "kind": "no_reset",
+    "target": "harness",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 2
+   }
+  ]
+ }
+}

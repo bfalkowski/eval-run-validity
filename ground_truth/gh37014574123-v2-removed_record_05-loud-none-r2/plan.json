@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/removed_record_05.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "removed_record on fixtures, 5% of calls",
+  "category": "task_defect",
+  "faults": [
+   {
+    "kind": "removed_record",
+    "target": "fixtures",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 2
+   }
+  ]
+ }
+}

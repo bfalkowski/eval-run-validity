@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/stale_fixture_25.json",
+ "fault_seed": 2,
+ "plan": {
+  "description": "stale_fixture on fixtures, 25% of calls",
+  "category": "task_defect",
+  "faults": [
+   {
+    "kind": "stale_fixture",
+    "target": "fixtures",
+    "rate": 0.25,
+    "start_item": 0,
+    "seed": 2
+   }
+  ]
+ }
+}

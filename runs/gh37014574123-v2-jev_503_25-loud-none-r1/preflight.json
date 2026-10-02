@@ -1,0 +1,25 @@
+{
+ "ok": true,
+ "checks": [
+  {
+   "name": "data_checksums",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "jev_canary",
+   "ok": true,
+   "detail": "answered 0"
+  },
+  {
+   "name": "judge_canary",
+   "ok": true,
+   "detail": "noul 0.92"
+  },
+  {
+   "name": "scorer_canary",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "fault_plan": "plans/jev_down_05.json",
+ "fault_seed": 1,
+ "plan": {
+  "description": "down on jev, 5% of calls",
+  "category": "infrastructure",
+  "faults": [
+   {
+    "kind": "down",
+    "target": "jev",
+    "rate": 0.05,
+    "start_item": 0,
+    "seed": 1
+   }
+  ]
+ }
+}
