@@ -1,0 +1,1696 @@
+{
+ "run_id": "gh37023643915-v2-clean-loud-partial_upload-r1",
+ "verdict": "invalid",
+ "reasons": [
+  "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+  "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-partial_upload-r2']",
+  "invalid: no traces found",
+  "invalid: 104 of 120 items excluded (87%)",
+  "degraded: judge score withheld: 100% of judge results excluded"
+ ],
+ "planned_items": 60,
+ "completed_items": 60,
+ "score": {
+  "naive": 0.8166666666666667,
+  "valid_items": null,
+  "n_valid_items": 16,
+  "excluded_rate": 0.8666666666666667
+ },
+ "judge_score": {
+  "naive": 0.875,
+  "valid_items": null,
+  "excluded_rate": 1.0
+ },
+ "categories": {
+  "harness_bug": 44,
+  "task_defect": 60,
+  "ok": 15,
+  "model_failure": 1
+ },
+ "judge_categories": {
+  "harness_bug": 44,
+  "task_defect": 60,
+  "infrastructure": 15,
+  "model_failure": 1
+ },
+ "missed_items": [
+  "V001",
+  "V001",
+  "V002",
+  "V002",
+  "V003",
+  "V003",
+  "V004",
+  "V004",
+  "V005",
+  "V005",
+  "V006",
+  "V006",
+  "V007",
+  "V007",
+  "V008",
+  "V008",
+  "V009",
+  "V009",
+  "V010",
+  "V010",
+  "V011",
+  "V011",
+  "V012",
+  "V012",
+  "V013",
+  "V013",
+  "V014",
+  "V014",
+  "V015",
+  "V015",
+  "V016",
+  "V016",
+  "V017",
+  "V017",
+  "V018",
+  "V018",
+  "V019",
+  "V019",
+  "V020",
+  "V020",
+  "V021",
+  "V021",
+  "V022",
+  "V022",
+  "V023",
+  "V023",
+  "V024",
+  "V024",
+  "V025",
+  "V025",
+  "V026",
+  "V026",
+  "V027",
+  "V027",
+  "V028",
+  "V028",
+  "V029",
+  "V029",
+  "V030",
+  "V030",
+  "V031",
+  "V031",
+  "V032",
+  "V032",
+  "V033",
+  "V033",
+  "V034",
+  "V034",
+  "V035",
+  "V035",
+  "V036",
+  "V036",
+  "V037",
+  "V037",
+  "V038",
+  "V038",
+  "V039",
+  "V039",
+  "V040",
+  "V040",
+  "V041",
+  "V041",
+  "V042",
+  "V042",
+  "V043",
+  "V043",
+  "V044",
+  "V044",
+  "V045",
+  "V045",
+  "V046",
+  "V046",
+  "V047",
+  "V047",
+  "V048",
+  "V048",
+  "V049",
+  "V049",
+  "V050",
+  "V050",
+  "V051",
+  "V051",
+  "V052",
+  "V052",
+  "V053",
+  "V053",
+  "V054",
+  "V054",
+  "V055",
+  "V055",
+  "V056",
+  "V056",
+  "V057",
+  "V057",
+  "V058",
+  "V058",
+  "V059",
+  "V059",
+  "V060",
+  "V060"
+ ],
+ "missed_judge_items": [
+  "V001",
+  "V001",
+  "V002",
+  "V002",
+  "V003",
+  "V003",
+  "V004",
+  "V004",
+  "V005",
+  "V005",
+  "V006",
+  "V006",
+  "V007",
+  "V007",
+  "V008",
+  "V008",
+  "V009",
+  "V009",
+  "V010",
+  "V010",
+  "V011",
+  "V011",
+  "V012",
+  "V012",
+  "V013",
+  "V013",
+  "V014",
+  "V014",
+  "V015",
+  "V015",
+  "V016",
+  "V016",
+  "V017",
+  "V017",
+  "V018",
+  "V018",
+  "V019",
+  "V019",
+  "V020",
+  "V020",
+  "V021",
+  "V021",
+  "V022",
+  "V022",
+  "V023",
+  "V023",
+  "V024",
+  "V024",
+  "V025",
+  "V025",
+  "V026",
+  "V026",
+  "V027",
+  "V027",
+  "V028",
+  "V028",
+  "V029",
+  "V029",
+  "V030",
+  "V030",
+  "V031",
+  "V031",
+  "V032",
+  "V032",
+  "V033",
+  "V033",
+  "V034",
+  "V034",
+  "V035",
+  "V035",
+  "V036",
+  "V036",
+  "V037",
+  "V037",
+  "V038",
+  "V038",
+  "V039",
+  "V039",
+  "V040",
+  "V040",
+  "V041",
+  "V041",
+  "V042",
+  "V042",
+  "V043",
+  "V043",
+  "V044",
+  "V044",
+  "V045",
+  "V045",
+  "V046",
+  "V046",
+  "V047",
+  "V047",
+  "V048",
+  "V048",
+  "V049",
+  "V049",
+  "V050",
+  "V050",
+  "V051",
+  "V051",
+  "V052",
+  "V052",
+  "V053",
+  "V053",
+  "V054",
+  "V054",
+  "V055",
+  "V055",
+  "V056",
+  "V056",
+  "V057",
+  "V057",
+  "V058",
+  "V058",
+  "V059",
+  "V059",
+  "V060",
+  "V060"
+ ],
+ "retries_absorbed": 0,
+ "drift": {
+  "critical": [],
+  "warn": [],
+  "baseline": "gh37012503737-v2-clean-loud-none"
+ },
+ "items": [
+  {
+   "item_index": 0,
+   "ticket_id": "V001",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 0,
+   "ticket_id": "V001",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 1,
+   "ticket_id": "V002",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 1,
+   "ticket_id": "V002",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 2,
+   "ticket_id": "V003",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 2,
+   "ticket_id": "V003",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 3,
+   "ticket_id": "V004",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 3,
+   "ticket_id": "V004",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 4,
+   "ticket_id": "V005",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 4,
+   "ticket_id": "V005",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 5,
+   "ticket_id": "V006",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 5,
+   "ticket_id": "V006",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 6,
+   "ticket_id": "V007",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 6,
+   "ticket_id": "V007",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 7,
+   "ticket_id": "V008",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 7,
+   "ticket_id": "V008",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 8,
+   "ticket_id": "V009",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 8,
+   "ticket_id": "V009",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 9,
+   "ticket_id": "V010",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 9,
+   "ticket_id": "V010",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 10,
+   "ticket_id": "V011",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 10,
+   "ticket_id": "V011",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 11,
+   "ticket_id": "V012",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 11,
+   "ticket_id": "V012",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 12,
+   "ticket_id": "V013",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 12,
+   "ticket_id": "V013",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 13,
+   "ticket_id": "V014",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 13,
+   "ticket_id": "V014",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 14,
+   "ticket_id": "V015",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 14,
+   "ticket_id": "V015",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 15,
+   "ticket_id": "V016",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 15,
+   "ticket_id": "V016",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 16,
+   "ticket_id": "V017",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 16,
+   "ticket_id": "V017",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 17,
+   "ticket_id": "V018",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 17,
+   "ticket_id": "V018",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 18,
+   "ticket_id": "V019",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 18,
+   "ticket_id": "V019",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 19,
+   "ticket_id": "V020",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 19,
+   "ticket_id": "V020",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 20,
+   "ticket_id": "V021",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 20,
+   "ticket_id": "V021",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 21,
+   "ticket_id": "V022",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 21,
+   "ticket_id": "V022",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 22,
+   "ticket_id": "V023",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 22,
+   "ticket_id": "V023",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 23,
+   "ticket_id": "V024",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 23,
+   "ticket_id": "V024",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 24,
+   "ticket_id": "V025",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 24,
+   "ticket_id": "V025",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 25,
+   "ticket_id": "V026",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 25,
+   "ticket_id": "V026",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 26,
+   "ticket_id": "V027",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 26,
+   "ticket_id": "V027",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 27,
+   "ticket_id": "V028",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 27,
+   "ticket_id": "V028",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 28,
+   "ticket_id": "V029",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 28,
+   "ticket_id": "V029",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 29,
+   "ticket_id": "V030",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 29,
+   "ticket_id": "V030",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 30,
+   "ticket_id": "V031",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 30,
+   "ticket_id": "V031",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 31,
+   "ticket_id": "V032",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 31,
+   "ticket_id": "V032",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 32,
+   "ticket_id": "V033",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 32,
+   "ticket_id": "V033",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 33,
+   "ticket_id": "V034",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 33,
+   "ticket_id": "V034",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 34,
+   "ticket_id": "V035",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 34,
+   "ticket_id": "V035",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 35,
+   "ticket_id": "V036",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 35,
+   "ticket_id": "V036",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 36,
+   "ticket_id": "V037",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 36,
+   "ticket_id": "V037",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 37,
+   "ticket_id": "V038",
+   "primary": "model_failure",
+   "judge": "model_failure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 37,
+   "ticket_id": "V038",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 38,
+   "ticket_id": "V039",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 38,
+   "ticket_id": "V039",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 39,
+   "ticket_id": "V040",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 39,
+   "ticket_id": "V040",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 40,
+   "ticket_id": "V041",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 40,
+   "ticket_id": "V041",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 41,
+   "ticket_id": "V042",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 41,
+   "ticket_id": "V042",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 42,
+   "ticket_id": "V043",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 42,
+   "ticket_id": "V043",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 43,
+   "ticket_id": "V044",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 43,
+   "ticket_id": "V044",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 44,
+   "ticket_id": "V045",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 44,
+   "ticket_id": "V045",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 45,
+   "ticket_id": "V046",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 45,
+   "ticket_id": "V046",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 46,
+   "ticket_id": "V047",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 46,
+   "ticket_id": "V047",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 47,
+   "ticket_id": "V048",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 47,
+   "ticket_id": "V048",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 48,
+   "ticket_id": "V049",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 48,
+   "ticket_id": "V049",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 49,
+   "ticket_id": "V050",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 49,
+   "ticket_id": "V050",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 50,
+   "ticket_id": "V051",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 50,
+   "ticket_id": "V051",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 51,
+   "ticket_id": "V052",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 51,
+   "ticket_id": "V052",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 52,
+   "ticket_id": "V053",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 52,
+   "ticket_id": "V053",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 53,
+   "ticket_id": "V054",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 53,
+   "ticket_id": "V054",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 54,
+   "ticket_id": "V055",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 54,
+   "ticket_id": "V055",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 55,
+   "ticket_id": "V056",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 55,
+   "ticket_id": "V056",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 56,
+   "ticket_id": "V057",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 56,
+   "ticket_id": "V057",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 57,
+   "ticket_id": "V058",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 57,
+   "ticket_id": "V058",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 58,
+   "ticket_id": "V059",
+   "primary": "harness_bug",
+   "judge": "harness_bug",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "scorer saw effects the trace does not show"
+   ]
+  },
+  {
+   "item_index": 58,
+   "ticket_id": "V059",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 59,
+   "ticket_id": "V060",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 59,
+   "ticket_id": "V060",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": true,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  }
+ ]
+}

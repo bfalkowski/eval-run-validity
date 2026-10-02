@@ -1,0 +1,303 @@
+{
+ "run_id": "gh37023643915-v2-clean-loud-kill_runner-r2",
+ "verdict": "invalid",
+ "reasons": [
+  "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
+  "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-kill_runner-r3']",
+  "invalid: partial run: 12 of 60 items finished",
+  "invalid: 11 of 23 items excluded (48%)",
+  "degraded: judge score withheld: 57% of judge results excluded"
+ ],
+ "planned_items": 60,
+ "completed_items": 12,
+ "score": {
+  "naive": 0.7391304347826086,
+  "valid_items": null,
+  "n_valid_items": 12,
+  "excluded_rate": 0.4782608695652174
+ },
+ "judge_score": {
+  "naive": 0.9130434782608695,
+  "valid_items": null,
+  "excluded_rate": 0.5652173913043478
+ },
+ "categories": {
+  "ok": 10,
+  "task_defect": 11,
+  "model_failure": 2
+ },
+ "judge_categories": {
+  "ok": 10,
+  "task_defect": 11,
+  "judge_failure": 1,
+  "infrastructure": 1
+ },
+ "missed_items": [],
+ "missed_judge_items": [
+  "V012"
+ ],
+ "retries_absorbed": 0,
+ "drift": {
+  "critical": [],
+  "warn": [],
+  "baseline": "gh37012503737-v2-clean-loud-none"
+ },
+ "items": [
+  {
+   "item_index": 0,
+   "ticket_id": "V001",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 0,
+   "ticket_id": "V001",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 1,
+   "ticket_id": "V002",
+   "primary": "ok",
+   "judge": "judge_failure",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "judge repeats disagree"
+   ]
+  },
+  {
+   "item_index": 1,
+   "ticket_id": "V002",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 2,
+   "ticket_id": "V003",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 2,
+   "ticket_id": "V003",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 3,
+   "ticket_id": "V004",
+   "primary": "model_failure",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 3,
+   "ticket_id": "V004",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 4,
+   "ticket_id": "V005",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 4,
+   "ticket_id": "V005",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 5,
+   "ticket_id": "V006",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 5,
+   "ticket_id": "V006",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 6,
+   "ticket_id": "V007",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 6,
+   "ticket_id": "V007",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 7,
+   "ticket_id": "V008",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 7,
+   "ticket_id": "V008",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 8,
+   "ticket_id": "V009",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 8,
+   "ticket_id": "V009",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 9,
+   "ticket_id": "V010",
+   "primary": "ok",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 9,
+   "ticket_id": "V010",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 10,
+   "ticket_id": "V011",
+   "primary": "model_failure",
+   "judge": "ok",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": []
+  },
+  {
+   "item_index": 10,
+   "ticket_id": "V011",
+   "primary": "task_defect",
+   "judge": "task_defect",
+   "missed": false,
+   "judge_missed": false,
+   "retries": 0,
+   "reasons": [
+    "duplicate item"
+   ]
+  },
+  {
+   "item_index": 11,
+   "ticket_id": "V012",
+   "primary": "ok",
+   "judge": "infrastructure",
+   "missed": false,
+   "judge_missed": true,
+   "retries": 0,
+   "reasons": [
+    "judge missing"
+   ]
+  }
+ ]
+}
