@@ -20,10 +20,30 @@ An eval score only means something if the run that produced it worked. This repo
 
 For each ticket the agent looks up the order and the stock, asks Jev which action the support policy calls for (refund, reship, escalate or reply), takes it and replies. The scorer checks the side effects against the expected action. The judge asks Jev twice whether the resolution follows the policy.
 
+## Setup
+
+On macOS with Homebrew Python, pip will not install packages globally (PEP 668), so use a virtual environment in the repo. `.venv/` is gitignored.
+
+```bash
+cd eval-run-validity
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pre-commit -r requirements.lock
+pre-commit install            # gitleaks runs before every commit
+pre-commit run --all-files    # run it once now; expect "Detect hardcoded secrets ... Passed"
+```
+
+In a new terminal, run `source .venv/bin/activate` again before using `run.py`. The git hook does not need the environment to be active.
+
+Put the Jev key in `.env` (gitignored):
+
+```
+TYPESAFE_API_KEY=...
+```
+
 ## Running it
 
 ```bash
-pip install -r requirements.lock
 
 # no key needed: local stand-in for Jev, for testing the plumbing
 JEV_BACKEND=stub POLICY_VERSION=v1 python run.py --run-id stub-clean
@@ -70,7 +90,7 @@ The key lives only in `.env` (gitignored) locally and in the `TYPESAFE_API_KEY` 
 - `secrets` workflow: fails if a `.env` or key file is tracked, and runs gitleaks over the whole git history on every push.
 - `run` workflow: before uploading, checks that the key does not appear in the run outputs and scans them with gitleaks.
 - `tests/test_pipeline.py` runs a wrong-key run with a fake key and checks that it never appears in traces, manifests or item records.
-- Optional local hook: `pip install pre-commit && pre-commit install`.
+- Local hook: `pre-commit install` (see Setup) runs gitleaks before every commit.
 
 ## Not affiliated
 
