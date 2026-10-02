@@ -104,3 +104,15 @@ def test_faultd_is_deterministic():
     hits_b = [b.check("r", "jev", i, c) is not None for i in range(50) for c in range(3)]
     assert hits_a == hits_b and 0.15 < sum(hits_a) / len(hits_a) < 0.45
     assert a.check("r", "judge", 1, 0) is None
+
+
+def test_run_outputs_never_contain_the_key(tmp):
+    """Traces, manifests and items get committed to the data branch, so the key
+    must never be written into them, including on a wrong-key run."""
+    secret = "ts-test-SECRET-0123456789abcdef"
+    env = {**ENV, "TYPESAFE_API_KEY": secret}
+    run(tmp, "keycheck", "--fault-plan", "plans/wrong_key_first20.json", env=env)
+    for folder in (tmp / "runs" / "keycheck", tmp / "truth" / "keycheck"):
+        for path in folder.rglob("*"):
+            if path.is_file():
+                assert secret not in path.read_text(errors="ignore"), path

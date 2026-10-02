@@ -14,7 +14,7 @@ An eval score only means something if the run that produced it worked. This repo
 | `data/` | 60 support tickets, the orders fixture and the expected actions. Built by `data/make_data.py`. |
 | `plans/` | The fault catalog: one JSON file per fault and dose. Built by `plans/make_plans.py`. |
 | `baselines/` | The manifest of a clean run that other runs are compared against. |
-| `.github/workflows/` | `ci` (tests), `run` (eval runs with faults), `collect` (gather runs onto the `data` branch). |
+| `.github/workflows/` | `ci` (tests), `secrets` (secret scan), `run` (eval runs with faults), `collect` (gather runs onto the `data` branch). |
 
 ## The eval
 
@@ -62,6 +62,15 @@ The gate sees only what a real pipeline would see: the manifest, traces, item re
 ## CI
 
 Add `TYPESAFE_API_KEY` as a repository secret. Then start **run** from the Actions tab with a list of plans, a backend (`stub` or `api`) and an optional pipeline fault (runner killed, job timeout, partial upload, dependency drift, Python drift, missing env var, wrong commit). Then start **collect** with that run's ID to put the results on the `data` branch, optionally with a collect fault (a run merged twice, or two runs mixed).
+
+## Secrets
+
+The key lives only in `.env` (gitignored) locally and in the `TYPESAFE_API_KEY` repository secret in CI.
+
+- `secrets` workflow: fails if a `.env` or key file is tracked, and runs gitleaks over the whole git history on every push.
+- `run` workflow: before uploading, checks that the key does not appear in the run outputs and scans them with gitleaks.
+- `tests/test_pipeline.py` runs a wrong-key run with a fake key and checks that it never appears in traces, manifests or item records.
+- Optional local hook: `pip install pre-commit && pre-commit install`.
 
 ## Not affiliated
 

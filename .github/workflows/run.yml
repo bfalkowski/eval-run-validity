@@ -91,6 +91,16 @@ jobs:
             "$RUN_ID" "${{ matrix.plan }}" "${{ inputs.pipeline_fault }}" "${{ inputs.error_policy }}" "${{ inputs.backend }}" \
             > ground_truth/$RUN_ID/pipeline.json
 
+      - name: No secrets in run outputs
+        if: always()
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          if [ -n "$TYPESAFE_API_KEY" ] && grep -rqF "$TYPESAFE_API_KEY" runs ground_truth 2>/dev/null; then
+            echo "the API key appears in the run outputs; not uploading"; exit 1
+          fi
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:v8.28.0 dir /repo/runs --redact --exit-code 1
+
       - name: "pipeline fault: partial upload"
         if: inputs.pipeline_fault == 'partial_upload'
         run: rm -f runs/$RUN_ID/traces.jsonl
