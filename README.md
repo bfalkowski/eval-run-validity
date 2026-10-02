@@ -1,6 +1,6 @@
 # eval-run-validity
 
-Code and data for the paper **Is This Run Valid? Attributing Pipeline Failures Before Scoring LLM Evaluations** (in progress).
+Code and data for the paper **[Is This Run Valid? Attributing Pipeline Failures Before Scoring LLM Evaluations](https://bfalkowski.github.io/writing/run-valid.html)**. Raw runs, traces and ground truth are on the `data` branch.
 
 An eval score only means something if the run that produced it worked. This repo runs a small agent eval many times, injects known faults into the agents, the judge, the data, the scorer and the CI pipeline, and tests whether a validity gate can tell a broken run from a real model regression before any score is reported.
 
