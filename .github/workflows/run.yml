@@ -28,6 +28,9 @@ on:
         type: choice
         default: none
         options: [none, kill_runner, job_timeout, partial_upload, dep_drift, python_drift, missing_env, wrong_commit]
+      reps:
+        description: 'Repeats of each plan as a JSON list, e.g. [1,2,3]'
+        default: '[1]'
       max_spend_usd:
         default: "1"
 
@@ -36,11 +39,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 3
       matrix:
         plan: ${{ fromJSON(inputs.plans) }}
+        rep: ${{ fromJSON(inputs.reps) }}
     env:
-      RUN_ID: gh${{ github.run_id }}-${{ inputs.dataset }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ inputs.pipeline_fault }}
+      RUN_ID: gh${{ github.run_id }}-${{ inputs.dataset }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ inputs.pipeline_fault }}-r${{ matrix.rep }}
     steps:
       - uses: actions/checkout@v4
         with:
