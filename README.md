@@ -1,0 +1,72 @@
+# eval-run-validity
+
+Code and data for the paper **Is This Run Valid? Attributing Pipeline Failures Before Scoring LLM Evaluations** (in progress).
+
+An eval score only means something if the run that produced it worked. This repo runs a small agent eval many times, injects known faults into the agents, the judge, the data, the scorer and the CI pipeline, and tests whether a validity gate can tell a broken run from a real model regression before any score is reported.
+
+## What is here
+
+| Folder | What it does |
+|---|---|
+| `agents/` | A support agent and a judge. Jev (TypeSafe) makes every decision. A local orders service provides the tools. A deterministic scorer checks the outcome. |
+| `faultd/` | The fault API. Every component asks it, call by call, whether to fail. It logs what it injected to `ground_truth/`, which the gate never reads. |
+| `validity/` | Run manifest (fingerprint), preflight checks, OpenTelemetry tracing, attribution rules and the gate. |
+| `data/` | 60 support tickets, the orders fixture and the expected actions. Built by `data/make_data.py`. |
+| `plans/` | The fault catalog: one JSON file per fault and dose. Built by `plans/make_plans.py`. |
+| `baselines/` | The manifest of a clean run that other runs are compared against. |
+| `.github/workflows/` | `ci` (tests), `run` (eval runs with faults), `collect` (gather runs onto the `data` branch). |
+
+## The eval
+
+For each ticket the agent looks up the order and the stock, asks Jev which action the support policy calls for (refund, reship, escalate or reply), takes it and replies. The scorer checks the side effects against the expected action. The judge asks Jev twice whether the resolution follows the policy.
+
+## Running it
+
+```bash
+pip install -r requirements.lock
+
+# no key needed: local stand-in for Jev, for testing the plumbing
+JEV_BACKEND=stub POLICY_VERSION=v1 python run.py --run-id stub-clean
+
+# real Jev (key in .env as TYPESAFE_API_KEY)
+POLICY_VERSION=v1 python run.py --run-id clean-01
+POLICY_VERSION=v1 python run.py --run-id wk-01 --fault-plan plans/wrong_key_first20.json --error-policy silent
+
+# re-gate a run folder
+python -m validity.gate runs/wk-01 --baseline baselines/manifest.json
+
+# every plan once, with the stub
+JEV_BACKEND=stub POLICY_VERSION=v1 JEV_BACKOFF_S=0 python sweep.py --prefix stub
+```
+
+`POLICY_VERSION` defaults to an old policy on purpose. A missing environment variable that silently falls back to a stale default is one of the pipeline faults the gate should catch.
+
+Each run writes `runs/<run_id>/` with `manifest.json`, `preflight.json`, `traces.jsonl`, `items.jsonl` and `verdict.json`.
+
+## The verdict
+
+- **valid**: report the score.
+- **degraded**: report the score on valid items, with the share excluded beside it.
+- **invalid**: report no score, only why.
+
+Every failed item gets one cause: `infrastructure`, `config_drift`, `judge_failure`, `task_defect`, `harness_bug` or `model_failure`. The naive score (what a pipeline without these checks would report) is kept for comparison.
+
+## Error policy
+
+`--error-policy loud` raises on a failed Jev call. `--error-policy silent` falls back to a default (the agent replies and does nothing else; the judge votes fail). Silent fallbacks are the common real bug: failed calls look like ordinary wrong answers. The gate finds them from the traces, because the transport records the failure even when the agent code swallows it.
+
+## Keeping the ground truth honest
+
+The gate sees only what a real pipeline would see: the manifest, traces, item records and the committed dataset. Injected faults raise the same errors as real ones. `tests/test_pipeline.py` checks that nothing in `validity/` imports faultd or names its log, and that a verdict is identical with the ground-truth folder deleted.
+
+## CI
+
+Add `TYPESAFE_API_KEY` as a repository secret. Then start **run** from the Actions tab with a list of plans, a backend (`stub` or `api`) and an optional pipeline fault (runner killed, job timeout, partial upload, dependency drift, Python drift, missing env var, wrong commit). Then start **collect** with that run's ID to put the results on the `data` branch, optionally with a collect fault (a run merged twice, or two runs mixed).
+
+## Not affiliated
+
+Not affiliated with TypeSafe. No employer data or code is used.
+
+## License
+
+MIT

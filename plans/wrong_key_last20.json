@@ -1,0 +1,15 @@
+{
+ "description": "wrong_key on jev+judge, items 40..None",
+ "category": "infrastructure",
+ "faults": [
+  {
+   "seed": 1,
+   "kind": "wrong_key",
+   "target": [
+    "jev",
+    "judge"
+   ],
+   "start_item": 40
+  }
+ ]
+}

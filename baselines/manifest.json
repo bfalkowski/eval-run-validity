@@ -1,0 +1,37 @@
+{
+ "run_id": "baseline-stub",
+ "created_at": "2026-10-02T12:23:42Z",
+ "planned_items": 60,
+ "model": "jev-latest",
+ "policy_version": "v1",
+ "policy_hash": "e376f08f5a79df10",
+ "decision_instructions_hash": "4edd548d54061ef3",
+ "judge_instructions_hash": "65288897c3f2098c",
+ "context_fields": [
+  "order",
+  "policy",
+  "stock",
+  "ticket",
+  "today"
+ ],
+ "dataset_hash": "986648fed35baff0",
+ "agent_code_hash": "625d9aaad2e7ef6f",
+ "scorer_code_hash": "7d99279c00bb6e30",
+ "packages": {
+  "opentelemetry-api": "1.45.0",
+  "opentelemetry-sdk": "1.45.0"
+ },
+ "lockfile_hash": "1a1b30a934c573f0",
+ "python_version": "3.11",
+ "error_policy": "loud",
+ "declared_changes": [],
+ "git_commit": "HEAD",
+ "runner": {
+  "platform": "Linux-6.18.44-fc-v51-x86_64-with-glibc2.39",
+  "ci": false,
+  "github_run_id": null,
+  "runner_name": null
+ },
+ "jev_backend": "stub",
+ "manifest_hash": "ccf23cd3c81f2f1b"
+}

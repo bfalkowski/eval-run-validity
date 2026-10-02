@@ -1,0 +1,13 @@
+{
+ "description": "off_by_one on scorer, 25% of calls",
+ "category": "harness_bug",
+ "faults": [
+  {
+   "kind": "off_by_one",
+   "target": "scorer",
+   "rate": 0.25,
+   "start_item": 0,
+   "seed": 1
+  }
+ ]
+}

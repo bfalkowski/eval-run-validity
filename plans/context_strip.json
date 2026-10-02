@@ -1,0 +1,10 @@
+{
+ "description": "context_strip, undeclared",
+ "category": "config_drift",
+ "faults": [
+  {
+   "kind": "context_strip",
+   "target": "config"
+  }
+ ]
+}

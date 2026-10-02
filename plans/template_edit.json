@@ -1,0 +1,10 @@
+{
+ "description": "template_edit, undeclared",
+ "category": "config_drift",
+ "faults": [
+  {
+   "kind": "template_edit",
+   "target": "config"
+  }
+ ]
+}

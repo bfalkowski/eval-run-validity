@@ -1,0 +1,6 @@
+{
+  "_note": "Starting values. Freeze these on the dev split before looking at held-out runs.",
+  "max_excluded_valid": 0.02,
+  "max_excluded_degraded": 0.15,
+  "min_completed_share": 0.9
+}

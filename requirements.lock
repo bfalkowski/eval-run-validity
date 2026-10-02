@@ -1,0 +1,6 @@
+# Exact versions used for paper runs. CI installs from this file; the manifest
+# records its hash, so a run on different versions shows up as drift.
+opentelemetry-api==1.45.0
+opentelemetry-sdk==1.45.0
+opentelemetry-semantic-conventions==0.66b0
+typing_extensions==4.15.0

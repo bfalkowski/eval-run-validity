@@ -1,0 +1,108 @@
+name: run
+# Start eval runs by hand. One job per fault plan.
+#   plans:          JSON list of plan names from plans/ ("clean" for no faults)
+#   pipeline_fault: a fault in this workflow itself, applied to every job
+# Ground truth (what was injected) is uploaded as a separate artifact that the
+# gate never reads.
+on:
+  workflow_dispatch:
+    inputs:
+      plans:
+        description: 'JSON list of plans, e.g. ["clean","jev_503_25","wrong_key_first20"]'
+        default: '["clean"]'
+      error_policy:
+        type: choice
+        options: [loud, silent]
+        default: loud
+      backend:
+        type: choice
+        options: [stub, api]
+        default: stub
+      tickets:
+        default: "60"
+      pipeline_fault:
+        type: choice
+        default: none
+        options: [none, kill_runner, job_timeout, partial_upload, dep_drift, python_drift, missing_env, wrong_commit]
+      max_spend_usd:
+        default: "1"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        plan: ${{ fromJSON(inputs.plans) }}
+    env:
+      RUN_ID: gh${{ github.run_id }}-${{ matrix.plan }}-${{ inputs.error_policy }}-${{ inputs.pipeline_fault }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "pipeline fault: wrong commit of agents/"
+        if: inputs.pipeline_fault == 'wrong_commit'
+        run: |
+          old=$(git log -n 1 --skip 1 --format=%H -- agents/)
+          echo "checking out agents/ from $old"
+          git checkout "$old" -- agents/
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.pipeline_fault == 'python_drift' && '3.12' || '3.11' }}
+
+      - name: Install
+        run: |
+          if [ "${{ inputs.pipeline_fault }}" = "dep_drift" ]; then
+            # what an unpinned install looks like when the resolver picks other versions
+            pip install "opentelemetry-api<1.45" "opentelemetry-sdk<1.45"
+          else
+            pip install -r requirements.lock
+          fi
+
+      - name: Run
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          JEV_BACKEND: ${{ inputs.backend == 'stub' && 'stub' || '' }}
+          JEV_STUB_LATENCY_S: "0.1"
+          MAX_SPEND_USD: ${{ inputs.max_spend_usd }}
+          PF: ${{ inputs.pipeline_fault }}
+        run: |
+          if [ "$PF" != "missing_env" ]; then export POLICY_VERSION=v1; fi
+          args="--run-id $RUN_ID --tickets ${{ inputs.tickets }} --error-policy ${{ inputs.error_policy }}"
+          if [ "${{ matrix.plan }}" != "clean" ]; then args="$args --fault-plan plans/${{ matrix.plan }}.json"; fi
+          case "$PF" in
+            kill_runner)
+              python run.py $args & pid=$!
+              sleep 8; kill -9 $pid || true; wait $pid || true ;;
+            job_timeout)
+              timeout 10 python run.py $args || true ;;
+            *)
+              python run.py $args || true ;;
+          esac
+
+      - name: Record ground truth
+        if: always()
+        run: |
+          mkdir -p ground_truth/$RUN_ID
+          printf '{"run_id":"%s","plan":"%s","pipeline_fault":"%s","error_policy":"%s","backend":"%s"}\n' \
+            "$RUN_ID" "${{ matrix.plan }}" "${{ inputs.pipeline_fault }}" "${{ inputs.error_policy }}" "${{ inputs.backend }}" \
+            > ground_truth/$RUN_ID/pipeline.json
+
+      - name: "pipeline fault: partial upload"
+        if: inputs.pipeline_fault == 'partial_upload'
+        run: rm -f runs/$RUN_ID/traces.jsonl
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: run-${{ env.RUN_ID }}
+          path: runs/${{ env.RUN_ID }}
+          if-no-files-found: warn
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: truth-${{ env.RUN_ID }}
+          path: ground_truth/${{ env.RUN_ID }}

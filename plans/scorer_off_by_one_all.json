@@ -1,0 +1,12 @@
+{
+ "description": "off_by_one on scorer, items None..None",
+ "category": "harness_bug",
+ "faults": [
+  {
+   "seed": 1,
+   "kind": "off_by_one",
+   "target": "scorer",
+   "rate": 1.0
+  }
+ ]
+}

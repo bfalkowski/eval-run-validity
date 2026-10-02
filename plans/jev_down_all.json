@@ -1,0 +1,11 @@
+{
+ "description": "down on jev, items None..None",
+ "category": "infrastructure",
+ "faults": [
+  {
+   "seed": 1,
+   "kind": "down",
+   "target": "jev"
+  }
+ ]
+}

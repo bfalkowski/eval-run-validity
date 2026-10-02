@@ -1,0 +1,13 @@
+{
+ "description": "stale_fixture on fixtures, 5% of calls",
+ "category": "task_defect",
+ "faults": [
+  {
+   "kind": "stale_fixture",
+   "target": "fixtures",
+   "rate": 0.05,
+   "start_item": 0,
+   "seed": 1
+  }
+ ]
+}

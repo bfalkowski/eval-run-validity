@@ -1,0 +1,12 @@
+{
+ "description": "http_401 on jev, items 30..None",
+ "category": "infrastructure",
+ "faults": [
+  {
+   "seed": 1,
+   "kind": "http_401",
+   "target": "jev",
+   "start_item": 30
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+{
+ "description": "prompt_edit, undeclared",
+ "category": "config_drift",
+ "faults": [
+  {
+   "kind": "prompt_edit",
+   "target": "config"
+  }
+ ]
+}

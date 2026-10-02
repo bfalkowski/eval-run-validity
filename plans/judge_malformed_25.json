@@ -1,0 +1,13 @@
+{
+ "description": "malformed on judge, 25% of calls",
+ "category": "judge_failure",
+ "faults": [
+  {
+   "kind": "malformed",
+   "target": "judge",
+   "rate": 0.25,
+   "start_item": 0,
+   "seed": 1
+  }
+ ]
+}

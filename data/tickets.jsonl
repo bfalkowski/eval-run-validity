@@ -1,0 +1,60 @@
+{"ticket_id": "T001", "order_id": 1001, "customer": "Theo Laurent", "text": "Order #1001: the drawing tablet arrived broken. The box was crushed. What can you do?", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T002", "order_id": 1002, "customer": "Omar Haddad", "text": "Hi, just checking on order #1002, when will my standing desk ship?", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T003", "order_id": 1003, "customer": "Ben Carter", "text": "Order #1003: the drawing tablet arrived broken. The box was crushed. What can you do?", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T004", "order_id": 1004, "customer": "Felix Braun", "text": "Any update on order #1004? Wondering when the office chair will get here.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T005", "order_id": 1005, "customer": "Diego Ramirez", "text": "Order #1005: the wireless mouse is fine, I just changed my mind. How do I return it?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T006", "order_id": 1006, "customer": "Maya Cohen", "text": "I got my noise-cancelling headphones (order #1006) but I don't need it anymore. Can I send it back?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T007", "order_id": 1007, "customer": "Kenji Sato", "text": "I never received my webcam, order #1007. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "refund"}
+{"ticket_id": "T008", "order_id": 1008, "customer": "Noah Grant", "text": "Wrong item in order #1008. I was expecting a drawing tablet.", "issue": "wrong_item", "expected": "escalate"}
+{"ticket_id": "T009", "order_id": 1009, "customer": "Jonah Feld", "text": "The office chair from order #1009 doesn't work out of the box, it looks damaged in shipping.", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T010", "order_id": 1010, "customer": "Priya Nair", "text": "Wrong item in order #1010. I was expecting a webcam.", "issue": "wrong_item", "expected": "refund"}
+{"ticket_id": "T011", "order_id": 1011, "customer": "Zara Ali", "text": "I never received my webcam, order #1011. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "refund"}
+{"ticket_id": "T012", "order_id": 1012, "customer": "Leila Karimi", "text": "Order #1012: the standing desk arrived broken. The box was crushed. What can you do?", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T013", "order_id": 1013, "customer": "Lena Fischer", "text": "Hi, my laptop stand (order #1013) showed up with a cracked casing. Can you sort this out?", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T014", "order_id": 1014, "customer": "Luca Moretti", "text": "Where is order #1014? The webcam never showed up.", "issue": "not_arrived", "expected": "refund"}
+{"ticket_id": "T015", "order_id": 1015, "customer": "Grace Liu", "text": "I got my mechanical keyboard (order #1015) but I don't need it anymore. Can I send it back?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T016", "order_id": 1016, "customer": "Ada Nwosu", "text": "Order #1016: the 27-inch monitor is fine, I just changed my mind. How do I return it?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T017", "order_id": 1017, "customer": "Tom Lindqvist", "text": "Wrong item in order #1017. I was expecting a wireless mouse.", "issue": "wrong_item", "expected": "escalate"}
+{"ticket_id": "T018", "order_id": 1018, "customer": "Sofia Rossi", "text": "I never received my bluetooth speaker, order #1018. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T019", "order_id": 1019, "customer": "Zara Ali", "text": "Wrong item in order #1019. I was expecting a standing desk.", "issue": "wrong_item", "expected": "escalate"}
+{"ticket_id": "T020", "order_id": 1020, "customer": "Omar Haddad", "text": "Hi, just checking on order #1020, when will my laptop stand ship?", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T021", "order_id": 1021, "customer": "Omar Haddad", "text": "I ordered a noise-cancelling headphones (order #1021) but you sent me something completely different.", "issue": "wrong_item", "expected": "refund"}
+{"ticket_id": "T022", "order_id": 1022, "customer": "Chloe Martin", "text": "Where is order #1022? The webcam never showed up.", "issue": "not_arrived", "expected": "refund"}
+{"ticket_id": "T023", "order_id": 1023, "customer": "Hannah Okafor", "text": "I never received my mechanical keyboard, order #1023. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T024", "order_id": 1024, "customer": "Mei Tanaka", "text": "Any update on order #1024? Wondering when the drawing tablet will get here.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T025", "order_id": 1025, "customer": "Nora Byrne", "text": "Can you tell me the status of order #1025? Excited for the mechanical keyboard.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T026", "order_id": 1026, "customer": "Ada Nwosu", "text": "I got my laptop stand (order #1026) but I don't need it anymore. Can I send it back?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T027", "order_id": 1027, "customer": "Leila Karimi", "text": "I got my webcam (order #1027) but I don't need it anymore. Can I send it back?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T028", "order_id": 1028, "customer": "Priya Nair", "text": "Hi, just checking on order #1028, when will my 27-inch monitor ship?", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T029", "order_id": 1029, "customer": "Mei Tanaka", "text": "I ordered a wireless mouse (order #1029) but you sent me something completely different.", "issue": "wrong_item", "expected": "refund"}
+{"ticket_id": "T030", "order_id": 1030, "customer": "Iris Nakamura", "text": "The mechanical keyboard from order #1030 doesn't work out of the box, it looks damaged in shipping.", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T031", "order_id": 1031, "customer": "Luca Moretti", "text": "My order #1031 (wireless mouse) still hasn't arrived and it's been weeks.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T032", "order_id": 1032, "customer": "Ada Nwosu", "text": "Where is order #1032? The drawing tablet never showed up.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T033", "order_id": 1033, "customer": "Luca Moretti", "text": "I got my drawing tablet (order #1033) but I don't need it anymore. Can I send it back?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T034", "order_id": 1034, "customer": "Arjun Rao", "text": "Where is order #1034? The wireless mouse never showed up.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T035", "order_id": 1035, "customer": "Ben Carter", "text": "I ordered a webcam (order #1035) but you sent me something completely different.", "issue": "wrong_item", "expected": "refund"}
+{"ticket_id": "T036", "order_id": 1036, "customer": "Felix Braun", "text": "The wireless mouse from order #1036 doesn't work out of the box, it looks damaged in shipping.", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T037", "order_id": 1037, "customer": "Ravi Menon", "text": "Any update on order #1037? Wondering when the standing desk will get here.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T038", "order_id": 1038, "customer": "Grace Liu", "text": "Can you tell me the status of order #1038? Excited for the mechanical keyboard.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T039", "order_id": 1039, "customer": "Zara Ali", "text": "I never received my noise-cancelling headphones, order #1039. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "refund"}
+{"ticket_id": "T040", "order_id": 1040, "customer": "Leila Karimi", "text": "Any update on order #1040? Wondering when the standing desk will get here.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T041", "order_id": 1041, "customer": "Theo Laurent", "text": "Wrong item in order #1041. I was expecting a office chair.", "issue": "wrong_item", "expected": "escalate"}
+{"ticket_id": "T042", "order_id": 1042, "customer": "Sam Whitaker", "text": "I'd like to return the 27-inch monitor from order #1042, it's not what I want after all.", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T043", "order_id": 1043, "customer": "Leila Karimi", "text": "My order #1043 (office chair) still hasn't arrived and it's been weeks.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T044", "order_id": 1044, "customer": "Felix Braun", "text": "I never received my laptop stand, order #1044. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T045", "order_id": 1045, "customer": "Luca Moretti", "text": "Hi, my webcam (order #1045) showed up with a cracked casing. Can you sort this out?", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T046", "order_id": 1046, "customer": "Ravi Menon", "text": "Hi, my standing desk (order #1046) showed up with a cracked casing. Can you sort this out?", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T047", "order_id": 1047, "customer": "Luca Moretti", "text": "The drawing tablet from order #1047 doesn't work out of the box, it looks damaged in shipping.", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T048", "order_id": 1048, "customer": "Luca Moretti", "text": "My order #1048 (office chair) still hasn't arrived and it's been weeks.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T049", "order_id": 1049, "customer": "Grace Liu", "text": "I got my webcam (order #1049) but I don't need it anymore. Can I send it back?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T050", "order_id": 1050, "customer": "Jonah Feld", "text": "Where is order #1050? The webcam never showed up.", "issue": "not_arrived", "expected": "refund"}
+{"ticket_id": "T051", "order_id": 1051, "customer": "Noah Grant", "text": "Order #1051 contained the wrong product, not the office chair I paid for.", "issue": "wrong_item", "expected": "escalate"}
+{"ticket_id": "T052", "order_id": 1052, "customer": "Theo Laurent", "text": "The wireless mouse from order #1052 doesn't work out of the box, it looks damaged in shipping.", "issue": "damaged", "expected": "escalate"}
+{"ticket_id": "T053", "order_id": 1053, "customer": "Ravi Menon", "text": "I never received my 27-inch monitor, order #1053. Tracking hasn't moved in ages.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T054", "order_id": 1054, "customer": "Priya Nair", "text": "Order #1054: the office chair is fine, I just changed my mind. How do I return it?", "issue": "changed_mind", "expected": "reply"}
+{"ticket_id": "T055", "order_id": 1055, "customer": "Ada Nwosu", "text": "The webcam from order #1055 doesn't work out of the box, it looks damaged in shipping.", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T056", "order_id": 1056, "customer": "Tom Lindqvist", "text": "Hi, my noise-cancelling headphones (order #1056) showed up with a cracked casing. Can you sort this out?", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T057", "order_id": 1057, "customer": "Iris Nakamura", "text": "Any update on order #1057? Wondering when the noise-cancelling headphones will get here.", "issue": "where_is_it", "expected": "reply"}
+{"ticket_id": "T058", "order_id": 1058, "customer": "Ravi Menon", "text": "My order #1058 (drawing tablet) still hasn't arrived and it's been weeks.", "issue": "not_arrived", "expected": "reship"}
+{"ticket_id": "T059", "order_id": 1059, "customer": "Sam Whitaker", "text": "Hi, my bluetooth speaker (order #1059) showed up with a cracked casing. Can you sort this out?", "issue": "damaged", "expected": "refund"}
+{"ticket_id": "T060", "order_id": 1060, "customer": "Noah Grant", "text": "Order #1060 contained the wrong product, not the mechanical keyboard I paid for.", "issue": "wrong_item", "expected": "refund"}

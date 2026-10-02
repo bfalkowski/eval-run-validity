@@ -1,0 +1,616 @@
+{
+ "orders": {
+  "1001": {
+   "id": 1001,
+   "customer": "Theo Laurent",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-14",
+   "delivered_on": "2026-08-18"
+  },
+  "1002": {
+   "id": 1002,
+   "customer": "Omar Haddad",
+   "sku": "DK-500",
+   "product": "standing desk",
+   "total": 649.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-26",
+   "delivered_on": null
+  },
+  "1003": {
+   "id": 1003,
+   "customer": "Ben Carter",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Delivered",
+   "shipped_on": "2026-07-31",
+   "delivered_on": "2026-08-04"
+  },
+  "1004": {
+   "id": 1004,
+   "customer": "Felix Braun",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Processing",
+   "shipped_on": null,
+   "delivered_on": null
+  },
+  "1005": {
+   "id": 1005,
+   "customer": "Diego Ramirez",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-09",
+   "delivered_on": "2026-09-13"
+  },
+  "1006": {
+   "id": 1006,
+   "customer": "Maya Cohen",
+   "sku": "HD-330",
+   "product": "noise-cancelling headphones",
+   "total": 299.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-15",
+   "delivered_on": "2026-09-19"
+  },
+  "1007": {
+   "id": 1007,
+   "customer": "Kenji Sato",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-13",
+   "delivered_on": null
+  },
+  "1008": {
+   "id": 1008,
+   "customer": "Noah Grant",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-31",
+   "delivered_on": "2026-09-04"
+  },
+  "1009": {
+   "id": 1009,
+   "customer": "Jonah Feld",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-14",
+   "delivered_on": "2026-08-18"
+  },
+  "1010": {
+   "id": 1010,
+   "customer": "Priya Nair",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-21",
+   "delivered_on": "2026-09-25"
+  },
+  "1011": {
+   "id": 1011,
+   "customer": "Zara Ali",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-15",
+   "delivered_on": null
+  },
+  "1012": {
+   "id": 1012,
+   "customer": "Leila Karimi",
+   "sku": "DK-500",
+   "product": "standing desk",
+   "total": 649.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-14",
+   "delivered_on": "2026-08-18"
+  },
+  "1013": {
+   "id": 1013,
+   "customer": "Lena Fischer",
+   "sku": "LP-720",
+   "product": "laptop stand",
+   "total": 59.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-31",
+   "delivered_on": "2026-09-04"
+  },
+  "1014": {
+   "id": 1014,
+   "customer": "Luca Moretti",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-12",
+   "delivered_on": null
+  },
+  "1015": {
+   "id": 1015,
+   "customer": "Grace Liu",
+   "sku": "KB-100",
+   "product": "mechanical keyboard",
+   "total": 129.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-16",
+   "delivered_on": "2026-09-20"
+  },
+  "1016": {
+   "id": 1016,
+   "customer": "Ada Nwosu",
+   "sku": "MN-450",
+   "product": "27-inch monitor",
+   "total": 389.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-13",
+   "delivered_on": "2026-09-17"
+  },
+  "1017": {
+   "id": 1017,
+   "customer": "Tom Lindqvist",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-14",
+   "delivered_on": "2026-08-18"
+  },
+  "1018": {
+   "id": 1018,
+   "customer": "Sofia Rossi",
+   "sku": "SP-940",
+   "product": "bluetooth speaker",
+   "total": 119.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-03",
+   "delivered_on": null
+  },
+  "1019": {
+   "id": 1019,
+   "customer": "Zara Ali",
+   "sku": "DK-500",
+   "product": "standing desk",
+   "total": 649.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-22",
+   "delivered_on": "2026-08-26"
+  },
+  "1020": {
+   "id": 1020,
+   "customer": "Omar Haddad",
+   "sku": "LP-720",
+   "product": "laptop stand",
+   "total": 59.0,
+   "status": "Processing",
+   "shipped_on": null,
+   "delivered_on": null
+  },
+  "1021": {
+   "id": 1021,
+   "customer": "Omar Haddad",
+   "sku": "HD-330",
+   "product": "noise-cancelling headphones",
+   "total": 299.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-12",
+   "delivered_on": "2026-09-16"
+  },
+  "1022": {
+   "id": 1022,
+   "customer": "Chloe Martin",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-08",
+   "delivered_on": null
+  },
+  "1023": {
+   "id": 1023,
+   "customer": "Hannah Okafor",
+   "sku": "KB-100",
+   "product": "mechanical keyboard",
+   "total": 129.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-04",
+   "delivered_on": null
+  },
+  "1024": {
+   "id": 1024,
+   "customer": "Mei Tanaka",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-21",
+   "delivered_on": null
+  },
+  "1025": {
+   "id": 1025,
+   "customer": "Nora Byrne",
+   "sku": "KB-100",
+   "product": "mechanical keyboard",
+   "total": 129.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-21",
+   "delivered_on": null
+  },
+  "1026": {
+   "id": 1026,
+   "customer": "Ada Nwosu",
+   "sku": "LP-720",
+   "product": "laptop stand",
+   "total": 59.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-13",
+   "delivered_on": "2026-09-17"
+  },
+  "1027": {
+   "id": 1027,
+   "customer": "Leila Karimi",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-13",
+   "delivered_on": "2026-09-17"
+  },
+  "1028": {
+   "id": 1028,
+   "customer": "Priya Nair",
+   "sku": "MN-450",
+   "product": "27-inch monitor",
+   "total": 389.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-22",
+   "delivered_on": null
+  },
+  "1029": {
+   "id": 1029,
+   "customer": "Mei Tanaka",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-24",
+   "delivered_on": "2026-09-28"
+  },
+  "1030": {
+   "id": 1030,
+   "customer": "Iris Nakamura",
+   "sku": "KB-100",
+   "product": "mechanical keyboard",
+   "total": 129.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-17",
+   "delivered_on": "2026-09-21"
+  },
+  "1031": {
+   "id": 1031,
+   "customer": "Luca Moretti",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-14",
+   "delivered_on": null
+  },
+  "1032": {
+   "id": 1032,
+   "customer": "Ada Nwosu",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-07",
+   "delivered_on": null
+  },
+  "1033": {
+   "id": 1033,
+   "customer": "Luca Moretti",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-10",
+   "delivered_on": "2026-09-14"
+  },
+  "1034": {
+   "id": 1034,
+   "customer": "Arjun Rao",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-01",
+   "delivered_on": null
+  },
+  "1035": {
+   "id": 1035,
+   "customer": "Ben Carter",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-21",
+   "delivered_on": "2026-09-25"
+  },
+  "1036": {
+   "id": 1036,
+   "customer": "Felix Braun",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-31",
+   "delivered_on": "2026-09-04"
+  },
+  "1037": {
+   "id": 1037,
+   "customer": "Ravi Menon",
+   "sku": "DK-500",
+   "product": "standing desk",
+   "total": 649.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-27",
+   "delivered_on": null
+  },
+  "1038": {
+   "id": 1038,
+   "customer": "Grace Liu",
+   "sku": "KB-100",
+   "product": "mechanical keyboard",
+   "total": 129.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-21",
+   "delivered_on": null
+  },
+  "1039": {
+   "id": 1039,
+   "customer": "Zara Ali",
+   "sku": "HD-330",
+   "product": "noise-cancelling headphones",
+   "total": 299.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-16",
+   "delivered_on": null
+  },
+  "1040": {
+   "id": 1040,
+   "customer": "Leila Karimi",
+   "sku": "DK-500",
+   "product": "standing desk",
+   "total": 649.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-25",
+   "delivered_on": null
+  },
+  "1041": {
+   "id": 1041,
+   "customer": "Theo Laurent",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-17",
+   "delivered_on": "2026-09-21"
+  },
+  "1042": {
+   "id": 1042,
+   "customer": "Sam Whitaker",
+   "sku": "MN-450",
+   "product": "27-inch monitor",
+   "total": 389.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-08",
+   "delivered_on": "2026-09-12"
+  },
+  "1043": {
+   "id": 1043,
+   "customer": "Leila Karimi",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-09",
+   "delivered_on": null
+  },
+  "1044": {
+   "id": 1044,
+   "customer": "Felix Braun",
+   "sku": "LP-720",
+   "product": "laptop stand",
+   "total": 59.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-10",
+   "delivered_on": null
+  },
+  "1045": {
+   "id": 1045,
+   "customer": "Luca Moretti",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-24",
+   "delivered_on": "2026-09-28"
+  },
+  "1046": {
+   "id": 1046,
+   "customer": "Ravi Menon",
+   "sku": "DK-500",
+   "product": "standing desk",
+   "total": 649.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-06",
+   "delivered_on": "2026-09-10"
+  },
+  "1047": {
+   "id": 1047,
+   "customer": "Luca Moretti",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-14",
+   "delivered_on": "2026-08-18"
+  },
+  "1048": {
+   "id": 1048,
+   "customer": "Luca Moretti",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Lost",
+   "shipped_on": "2026-09-12",
+   "delivered_on": null
+  },
+  "1049": {
+   "id": 1049,
+   "customer": "Grace Liu",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-15",
+   "delivered_on": "2026-09-19"
+  },
+  "1050": {
+   "id": 1050,
+   "customer": "Jonah Feld",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-16",
+   "delivered_on": null
+  },
+  "1051": {
+   "id": 1051,
+   "customer": "Noah Grant",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-21",
+   "delivered_on": "2026-09-25"
+  },
+  "1052": {
+   "id": 1052,
+   "customer": "Theo Laurent",
+   "sku": "MS-210",
+   "product": "wireless mouse",
+   "total": 39.0,
+   "status": "Delivered",
+   "shipped_on": "2026-08-22",
+   "delivered_on": "2026-08-26"
+  },
+  "1053": {
+   "id": 1053,
+   "customer": "Ravi Menon",
+   "sku": "MN-450",
+   "product": "27-inch monitor",
+   "total": 389.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-03",
+   "delivered_on": null
+  },
+  "1054": {
+   "id": 1054,
+   "customer": "Priya Nair",
+   "sku": "CH-610",
+   "product": "office chair",
+   "total": 549.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-02",
+   "delivered_on": "2026-09-06"
+  },
+  "1055": {
+   "id": 1055,
+   "customer": "Ada Nwosu",
+   "sku": "WB-830",
+   "product": "webcam",
+   "total": 89.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-21",
+   "delivered_on": "2026-09-25"
+  },
+  "1056": {
+   "id": 1056,
+   "customer": "Tom Lindqvist",
+   "sku": "HD-330",
+   "product": "noise-cancelling headphones",
+   "total": 299.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-17",
+   "delivered_on": "2026-09-21"
+  },
+  "1057": {
+   "id": 1057,
+   "customer": "Iris Nakamura",
+   "sku": "HD-330",
+   "product": "noise-cancelling headphones",
+   "total": 299.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-27",
+   "delivered_on": null
+  },
+  "1058": {
+   "id": 1058,
+   "customer": "Ravi Menon",
+   "sku": "TB-050",
+   "product": "drawing tablet",
+   "total": 899.0,
+   "status": "Shipped",
+   "shipped_on": "2026-09-05",
+   "delivered_on": null
+  },
+  "1059": {
+   "id": 1059,
+   "customer": "Sam Whitaker",
+   "sku": "SP-940",
+   "product": "bluetooth speaker",
+   "total": 119.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-17",
+   "delivered_on": "2026-09-21"
+  },
+  "1060": {
+   "id": 1060,
+   "customer": "Noah Grant",
+   "sku": "KB-100",
+   "product": "mechanical keyboard",
+   "total": 129.0,
+   "status": "Delivered",
+   "shipped_on": "2026-09-21",
+   "delivered_on": "2026-09-25"
+  }
+ },
+ "stock": {
+  "KB-100": 12,
+  "MS-210": 40,
+  "HD-330": 0,
+  "MN-450": 3,
+  "DK-500": 0,
+  "CH-610": 7,
+  "LP-720": 25,
+  "WB-830": 0,
+  "SP-940": 9,
+  "TB-050": 2
+ }
+}

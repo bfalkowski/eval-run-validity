@@ -1,0 +1,13 @@
+{
+ "description": "out_of_range on jev, 5% of calls",
+ "category": "infrastructure",
+ "faults": [
+  {
+   "kind": "out_of_range",
+   "target": "jev",
+   "rate": 0.05,
+   "start_item": 0,
+   "seed": 1
+  }
+ ]
+}

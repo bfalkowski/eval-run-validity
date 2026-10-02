@@ -1,0 +1,13 @@
+{
+ "description": "tool_500 on tool.*, 25% of calls",
+ "category": "infrastructure",
+ "faults": [
+  {
+   "kind": "tool_500",
+   "target": "tool.*",
+   "rate": 0.25,
+   "start_item": 0,
+   "seed": 1
+  }
+ ]
+}

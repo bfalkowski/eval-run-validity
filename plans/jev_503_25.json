@@ -1,0 +1,13 @@
+{
+ "description": "http_503 on jev, 25% of calls",
+ "category": "infrastructure",
+ "faults": [
+  {
+   "kind": "http_503",
+   "target": "jev",
+   "rate": 0.25,
+   "start_item": 0,
+   "seed": 1
+  }
+ ]
+}
