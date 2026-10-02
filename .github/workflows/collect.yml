@@ -1,8 +1,9 @@
 name: collect
 # Download the artifacts of one `run` workflow run, re-gate every run against
 # the baseline, and commit runs and ground truth to the `data` branch.
-#   pipeline_fault: duplicate_merge (one run's items appended twice) or
-#                   mixed_runs (two runs' items merged into one folder)
+#   pipeline_fault: duplicate_merge (a run's items appended twice) or
+#                   mixed_runs (another run's items merged in); written as
+#                   faulted copies, the originals are kept
 on:
   workflow_dispatch:
     inputs:
@@ -37,15 +38,34 @@ jobs:
           for d in downloaded/run-*; do id=${d#downloaded/run-}; mkdir -p runs/$id; cp -r $d/. runs/$id/; done
           for d in downloaded/truth-*; do id=${d#downloaded/truth-}; mkdir -p ground_truth/$id; cp -r $d/. ground_truth/$id/; done
       - name: "pipeline fault: collect merges wrongly"
+        # Faulted copies are written next to the originals as <run>-cf-<fault>,
+        # so the real runs on the data branch are never changed.
         if: inputs.pipeline_fault != 'none'
         run: |
-          first=$(ls runs | head -1); second=$(ls runs | sed -n 2p)
-          if [ "${{ inputs.pipeline_fault }}" = "duplicate_merge" ]; then
-            cp runs/$first/items.jsonl /tmp/items.jsonl; cat /tmp/items.jsonl >> runs/$first/items.jsonl
-          elif [ -n "$second" ]; then
-            cat runs/$second/items.jsonl >> runs/$first/items.jsonl
-          fi
-          echo "{\"collect_fault\": \"${{ inputs.pipeline_fault }}\", \"run\": \"$first\"}" > ground_truth/$first/collect.json
+          python - <<'PY'
+          import json, os, shutil
+          fault = "${{ inputs.pipeline_fault }}"
+          runs = sorted(d for d in os.listdir("runs") if "-cf-" not in d)
+          for i, rid in enumerate(runs):
+              src = f"runs/{rid}"
+              if not os.path.exists(f"{src}/items.jsonl"):
+                  continue
+              dst = f"runs/{rid}-cf-{fault}"
+              shutil.copytree(src, dst, dirs_exist_ok=True)
+              items = open(f"{src}/items.jsonl").read()
+              if fault == "duplicate_merge":
+                  extra = items
+              else:  # mixed_runs: append the next run's items
+                  other = runs[(i + 1) % len(runs)]
+                  extra = open(f"runs/{other}/items.jsonl").read() if other != rid else ""
+              with open(f"{dst}/items.jsonl", "a") as f:
+                  f.write(extra)
+              os.makedirs(f"ground_truth/{rid}-cf-{fault}", exist_ok=True)
+              if os.path.isdir(f"ground_truth/{rid}"):
+                  shutil.copytree(f"ground_truth/{rid}", f"ground_truth/{rid}-cf-{fault}", dirs_exist_ok=True)
+              json.dump({"collect_fault": fault, "source_run": rid},
+                        open(f"ground_truth/{rid}-cf-{fault}/collect.json", "w"))
+          PY
       - name: Re-gate
         run: for d in runs/*/; do python -m validity.gate "$d" --baseline auto; done
       - name: Commit to data branch

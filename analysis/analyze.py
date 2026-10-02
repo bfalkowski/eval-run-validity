@@ -41,7 +41,7 @@ LEVEL = {"valid": 0, "degraded": 1, "invalid": 2}
 THRESH = {"valid": 0.02, "degraded": 0.15}  # same starting values as validity/gate_config.json
 PIPELINE_TRUTH = {"none": None, "kill_runner": "invalid", "job_timeout": "invalid", "partial_upload": "invalid",
                   "dep_drift": "degraded", "python_drift": "degraded", "missing_env": "invalid",
-                  "wrong_commit": "invalid"}
+                  "wrong_commit": "invalid", "duplicate_merge": "invalid", "mixed_runs": "invalid"}
 
 
 def jl(path):
@@ -61,11 +61,12 @@ def load_run(root, rid):
     j = lambda p: json.load(open(p)) if os.path.exists(p) else None  # noqa: E731
     r = {"id": rid, "manifest": j(os.path.join(rd, "manifest.json")), "verdict": j(os.path.join(rd, "verdict.json")),
          "items": jl(os.path.join(rd, "items.jsonl")), "plan": j(os.path.join(gd, "plan.json")),
-         "pipeline": j(os.path.join(gd, "pipeline.json")) or {}, "injections": jl(os.path.join(gd, "injections.jsonl"))}
-    m = re.search(r"-r(\d+)$", rid)
+         "pipeline": j(os.path.join(gd, "pipeline.json")) or {}, "injections": jl(os.path.join(gd, "injections.jsonl")),
+         "collect": j(os.path.join(gd, "collect.json"))}
+    m = re.search(r"-r(\d+)(?:-cf-|$)", rid)
     r["rep"] = int(m.group(1)) if m else None
     r["plan_name"] = r["pipeline"].get("plan") or ("clean" if "-clean-" in rid else None)
-    r["pf"] = r["pipeline"].get("pipeline_fault", "none")
+    r["pf"] = (r["collect"] or {}).get("collect_fault") or r["pipeline"].get("pipeline_fault", "none")
     r["error_policy"] = r["pipeline"].get("error_policy", "loud")
     r["category"] = (r["plan"] or {}).get("plan", {}).get("category") or \
         {"clean": "clean", "control": "control"}.get(r["plan_name"])
@@ -161,7 +162,7 @@ def pct(x):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("data_root")
-    ap.add_argument("--split", choices=["dev", "heldout", "all"], default="dev")
+    ap.add_argument("--split", choices=["dev", "heldout", "silent", "pipeline", "all"], default="dev")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
     root = a.data_root
@@ -173,8 +174,9 @@ def main():
     runs = [load_run(root, os.path.basename(p)) for p in sorted(glob.glob(os.path.join(root, "runs", "*")))]
     missing = [r["id"] for r in runs if r["category"] is None]  # ground truth not collected (yet)
     runs = [r for r in runs if r["manifest"] and r["manifest"].get("dataset") == "v2" and r["category"]]
-    current = [r for r in runs if r["manifest"]["policy_hash"] == baseline["policy_hash"] or r["category"] == "config_drift"]
-    reps = {"dev": {1, 2}, "heldout": {3, 4}, "all": None}[a.split]
+    current = [r for r in runs if r["manifest"]["policy_hash"] == baseline["policy_hash"]
+               or r["category"] == "config_drift" or r["pf"] != "none"]
+    reps = {"dev": {1, 2}, "heldout": {3, 4}}.get(a.split)
 
     # noise floor: every clean run on the current baseline, any split
     clean = [r for r in current if r["category"] == "clean" and r["pf"] == "none" and r["error_policy"] == "loud"]
@@ -184,7 +186,15 @@ def main():
              "min": min(clean_scores), "max": max(clean_scores)}
     lo, hi = noise["mean"] - 2 * noise["sd"], noise["mean"] + 2 * noise["sd"]
 
-    sel = [r for r in current if r["rep"] is not None and (reps is None or r["rep"] in reps)]
+    def in_split(r):
+        if a.split == "all":
+            return True
+        if a.split == "silent":
+            return r["error_policy"] == "silent" and r["pf"] == "none"
+        if a.split == "pipeline":
+            return r["pf"] != "none"
+        return r["rep"] in reps and r["pf"] == "none" and r["error_policy"] == "loud"
+    sel = [r for r in current if r["rep"] is not None and in_split(r)]
     rows, conf_run = [], Counter()
     item_conf, unaffected_pred = Counter(), Counter()
     judge_conf = Counter()
