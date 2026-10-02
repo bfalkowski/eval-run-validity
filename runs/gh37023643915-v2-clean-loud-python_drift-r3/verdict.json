@@ -15,7 +15,7 @@
  "judge_score": {
   "naive": 0.9,
   "valid_items": 0.8983050847457628,
-  "excluded_rate": 0.01666666666666672
+  "excluded_rate": 0.016666666666666666
  },
  "categories": {
   "ok": 49,

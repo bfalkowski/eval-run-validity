@@ -1,34 +1,28 @@
 {
  "run_id": "gh37023643915-v2-clean-loud-dep_drift-r1",
- "verdict": "invalid",
+ "verdict": "degraded",
  "reasons": [
-  "degraded: environment differs from baseline in ['packages']",
-  "invalid: the same item appears more than once in the results (runs mixed or merged twice)",
-  "invalid: results from another run or config mixed in: ['gh37023643915-v2-clean-loud-dep_drift-r2']",
-  "invalid: 60 of 120 items excluded (50%)",
-  "degraded: judge score withheld: 52% of judge results excluded"
+  "degraded: environment differs from baseline in ['packages']"
  ],
  "planned_items": 60,
  "completed_items": 60,
  "score": {
-  "naive": 0.8416666666666667,
-  "valid_items": null,
+  "naive": 0.8666666666666667,
+  "valid_items": 0.8666666666666667,
   "n_valid_items": 60,
-  "excluded_rate": 0.5
+  "excluded_rate": 0.0
  },
  "judge_score": {
-  "naive": 0.8833333333333333,
-  "valid_items": null,
-  "excluded_rate": 0.5166666666666666
+  "naive": 0.85,
+  "valid_items": 0.8448275862068966,
+  "excluded_rate": 0.03333333333333333
  },
  "categories": {
   "ok": 52,
-  "task_defect": 60,
   "model_failure": 8
  },
  "judge_categories": {
   "ok": 58,
-  "task_defect": 60,
   "judge_failure": 2
  },
  "missed_items": [],
@@ -53,18 +47,6 @@
    "reasons": []
   },
   {
-   "item_index": 0,
-   "ticket_id": "V001",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 1,
    "ticket_id": "V002",
    "primary": "model_failure",
@@ -73,18 +55,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 1,
-   "ticket_id": "V002",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 2,
@@ -97,18 +67,6 @@
    "reasons": []
   },
   {
-   "item_index": 2,
-   "ticket_id": "V003",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 3,
    "ticket_id": "V004",
    "primary": "model_failure",
@@ -117,18 +75,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 3,
-   "ticket_id": "V004",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 4,
@@ -141,18 +87,6 @@
    "reasons": []
   },
   {
-   "item_index": 4,
-   "ticket_id": "V005",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 5,
    "ticket_id": "V006",
    "primary": "ok",
@@ -161,18 +95,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 5,
-   "ticket_id": "V006",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 6,
@@ -185,18 +107,6 @@
    "reasons": []
   },
   {
-   "item_index": 6,
-   "ticket_id": "V007",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 7,
    "ticket_id": "V008",
    "primary": "ok",
@@ -205,18 +115,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 7,
-   "ticket_id": "V008",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 8,
@@ -229,18 +127,6 @@
    "reasons": []
   },
   {
-   "item_index": 8,
-   "ticket_id": "V009",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 9,
    "ticket_id": "V010",
    "primary": "ok",
@@ -249,18 +135,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 9,
-   "ticket_id": "V010",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 10,
@@ -273,18 +147,6 @@
    "reasons": []
   },
   {
-   "item_index": 10,
-   "ticket_id": "V011",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 11,
    "ticket_id": "V012",
    "primary": "ok",
@@ -293,18 +155,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 11,
-   "ticket_id": "V012",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 12,
@@ -317,18 +167,6 @@
    "reasons": []
   },
   {
-   "item_index": 12,
-   "ticket_id": "V013",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 13,
    "ticket_id": "V014",
    "primary": "ok",
@@ -337,18 +175,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 13,
-   "ticket_id": "V014",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 14,
@@ -361,18 +187,6 @@
    "reasons": []
   },
   {
-   "item_index": 14,
-   "ticket_id": "V015",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 15,
    "ticket_id": "V016",
    "primary": "ok",
@@ -381,18 +195,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 15,
-   "ticket_id": "V016",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 16,
@@ -405,18 +207,6 @@
    "reasons": []
   },
   {
-   "item_index": 16,
-   "ticket_id": "V017",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 17,
    "ticket_id": "V018",
    "primary": "ok",
@@ -425,18 +215,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 17,
-   "ticket_id": "V018",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 18,
@@ -449,18 +227,6 @@
    "reasons": []
   },
   {
-   "item_index": 18,
-   "ticket_id": "V019",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 19,
    "ticket_id": "V020",
    "primary": "ok",
@@ -469,18 +235,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 19,
-   "ticket_id": "V020",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 20,
@@ -493,18 +247,6 @@
    "reasons": []
   },
   {
-   "item_index": 20,
-   "ticket_id": "V021",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 21,
    "ticket_id": "V022",
    "primary": "ok",
@@ -515,18 +257,6 @@
    "reasons": []
   },
   {
-   "item_index": 21,
-   "ticket_id": "V022",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 22,
    "ticket_id": "V023",
    "primary": "ok",
@@ -535,18 +265,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 22,
-   "ticket_id": "V023",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 23,
@@ -561,18 +279,6 @@
    ]
   },
   {
-   "item_index": 23,
-   "ticket_id": "V024",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 24,
    "ticket_id": "V025",
    "primary": "ok",
@@ -581,18 +287,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 24,
-   "ticket_id": "V025",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 25,
@@ -605,18 +299,6 @@
    "reasons": []
   },
   {
-   "item_index": 25,
-   "ticket_id": "V026",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 26,
    "ticket_id": "V027",
    "primary": "ok",
@@ -625,18 +307,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 26,
-   "ticket_id": "V027",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 27,
@@ -649,18 +319,6 @@
    "reasons": []
   },
   {
-   "item_index": 27,
-   "ticket_id": "V028",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 28,
    "ticket_id": "V029",
    "primary": "ok",
@@ -669,18 +327,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 28,
-   "ticket_id": "V029",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 29,
@@ -693,18 +339,6 @@
    "reasons": []
   },
   {
-   "item_index": 29,
-   "ticket_id": "V030",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 30,
    "ticket_id": "V031",
    "primary": "ok",
@@ -715,18 +349,6 @@
    "reasons": []
   },
   {
-   "item_index": 30,
-   "ticket_id": "V031",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 31,
    "ticket_id": "V032",
    "primary": "ok",
@@ -735,18 +357,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 31,
-   "ticket_id": "V032",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 32,
@@ -761,18 +371,6 @@
    ]
   },
   {
-   "item_index": 32,
-   "ticket_id": "V033",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 33,
    "ticket_id": "V034",
    "primary": "model_failure",
@@ -781,18 +379,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 33,
-   "ticket_id": "V034",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 34,
@@ -805,18 +391,6 @@
    "reasons": []
   },
   {
-   "item_index": 34,
-   "ticket_id": "V035",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 35,
    "ticket_id": "V036",
    "primary": "ok",
@@ -827,18 +401,6 @@
    "reasons": []
   },
   {
-   "item_index": 35,
-   "ticket_id": "V036",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 36,
    "ticket_id": "V037",
    "primary": "ok",
@@ -847,18 +409,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 36,
-   "ticket_id": "V037",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 37,
@@ -871,18 +421,6 @@
    "reasons": []
   },
   {
-   "item_index": 37,
-   "ticket_id": "V038",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 38,
    "ticket_id": "V039",
    "primary": "ok",
@@ -891,18 +429,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 38,
-   "ticket_id": "V039",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 39,
@@ -915,18 +441,6 @@
    "reasons": []
   },
   {
-   "item_index": 39,
-   "ticket_id": "V040",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 40,
    "ticket_id": "V041",
    "primary": "ok",
@@ -935,18 +449,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 40,
-   "ticket_id": "V041",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 41,
@@ -959,18 +461,6 @@
    "reasons": []
   },
   {
-   "item_index": 41,
-   "ticket_id": "V042",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 42,
    "ticket_id": "V043",
    "primary": "ok",
@@ -979,18 +469,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 42,
-   "ticket_id": "V043",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 43,
@@ -1003,18 +481,6 @@
    "reasons": []
   },
   {
-   "item_index": 43,
-   "ticket_id": "V044",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 44,
    "ticket_id": "V045",
    "primary": "ok",
@@ -1023,18 +489,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 44,
-   "ticket_id": "V045",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 45,
@@ -1047,18 +501,6 @@
    "reasons": []
   },
   {
-   "item_index": 45,
-   "ticket_id": "V046",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 46,
    "ticket_id": "V047",
    "primary": "ok",
@@ -1067,18 +509,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 46,
-   "ticket_id": "V047",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 47,
@@ -1091,18 +521,6 @@
    "reasons": []
   },
   {
-   "item_index": 47,
-   "ticket_id": "V048",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 48,
    "ticket_id": "V049",
    "primary": "ok",
@@ -1111,18 +529,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 48,
-   "ticket_id": "V049",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 49,
@@ -1135,18 +541,6 @@
    "reasons": []
   },
   {
-   "item_index": 49,
-   "ticket_id": "V050",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 50,
    "ticket_id": "V051",
    "primary": "ok",
@@ -1155,18 +549,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 50,
-   "ticket_id": "V051",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 51,
@@ -1179,18 +561,6 @@
    "reasons": []
   },
   {
-   "item_index": 51,
-   "ticket_id": "V052",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 52,
    "ticket_id": "V053",
    "primary": "ok",
@@ -1199,18 +569,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 52,
-   "ticket_id": "V053",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 53,
@@ -1223,18 +581,6 @@
    "reasons": []
   },
   {
-   "item_index": 53,
-   "ticket_id": "V054",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 54,
    "ticket_id": "V055",
    "primary": "ok",
@@ -1243,18 +589,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 54,
-   "ticket_id": "V055",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 55,
@@ -1267,18 +601,6 @@
    "reasons": []
   },
   {
-   "item_index": 55,
-   "ticket_id": "V056",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 56,
    "ticket_id": "V057",
    "primary": "ok",
@@ -1287,18 +609,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 56,
-   "ticket_id": "V057",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   },
   {
    "item_index": 57,
@@ -1311,18 +621,6 @@
    "reasons": []
   },
   {
-   "item_index": 57,
-   "ticket_id": "V058",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 58,
    "ticket_id": "V059",
    "primary": "ok",
@@ -1333,18 +631,6 @@
    "reasons": []
   },
   {
-   "item_index": 58,
-   "ticket_id": "V059",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
-  },
-  {
    "item_index": 59,
    "ticket_id": "V060",
    "primary": "ok",
@@ -1353,18 +639,6 @@
    "judge_missed": false,
    "retries": 0,
    "reasons": []
-  },
-  {
-   "item_index": 59,
-   "ticket_id": "V060",
-   "primary": "task_defect",
-   "judge": "task_defect",
-   "missed": false,
-   "judge_missed": false,
-   "retries": 0,
-   "reasons": [
-    "duplicate item"
-   ]
   }
  ]
 }
