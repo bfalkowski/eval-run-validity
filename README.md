@@ -76,6 +76,10 @@ Each run writes `runs/<run_id>/` with `manifest.json`, `preflight.json`, `traces
 
 Each stage is `python -m validity.stages <stage> runs/<id>`, which writes a short Markdown section to the job summary and exits non-zero to stop the pipeline. Start it from the Actions tab and pick a `demo_fault` to watch where each fault is stopped.
 
+## Browsing the runs
+
+Every collected run can be browsed at [bfalkowski.github.io/review](https://bfalkowski.github.io/review/): a queue of runs ordered by verdict, the gate's reasons, the fingerprint, the excluded tickets and the trace for any ticket. The page's index is built from the `data` branch with `analysis/build_review_index.py`.
+
 ## The verdict
 
 - **valid**: report the score.
