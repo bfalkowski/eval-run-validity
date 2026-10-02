@@ -14,7 +14,7 @@ An eval score only means something if the run that produced it worked. This repo
 | `data/` | Two datasets of 60 support tickets each, with their orders fixtures and expected actions. `v1` (`data/make_data.py`) is straightforward; `v2` (`data/make_data_v2.py`, in `data/v2/`) makes each ticket hard in one deliberate way and is the one used for the paper. Pick with `--dataset` or `DATASET`; the default is `v2`. |
 | `plans/` | The fault catalog: one JSON file per fault and dose. Built by `plans/make_plans.py`. |
 | `baselines/` | One manifest per dataset (`manifest_v1.json`, `manifest_v2.json`): a clean CI run that other runs are compared against. |
-| `.github/workflows/` | `ci` (tests), `secrets` (secret scan), `run` (eval runs with faults), `collect` (gather runs onto the `data` branch). |
+| `.github/workflows/` | `eval` (the reference pipeline: preflight, run, validate, report), `ci` (tests), `secrets` (secret scan), `run` (experiment batches with faults), `collect` (gather runs onto the `data` branch). |
 
 ## The eval
 
@@ -62,6 +62,19 @@ JEV_BACKEND=stub POLICY_VERSION=v1 JEV_BACKOFF_S=0 python sweep.py --prefix stub
 `POLICY_VERSION` defaults to an old policy on purpose. A missing environment variable that silently falls back to a stale default is one of the pipeline faults the gate should catch.
 
 Each run writes `runs/<run_id>/` with `manifest.json`, `preflight.json`, `traces.jsonl`, `items.jsonl` and `verdict.json`.
+
+## The reference pipeline
+
+`.github/workflows/eval.yml` is the pipeline the paper recommends, with the validity gate as stages between running the eval and publishing its score:
+
+| Job | Stage | Stops the pipeline when |
+|---|---|---|
+| `preflight` | canaries, checksums, then the run fingerprint against the baseline | a canary or checksum fails, or a critical field changed without being declared. Nothing paid has run yet. |
+| `run` | the eval itself, traced | (never; it always uploads what it has) |
+| `validate` | integrity, coverage, gate | items are missing, repeated or from another run; an item has no successful model call; the gate says invalid |
+| `report` | score on valid items, excluded items, comparison with `baselines/score_v2.json` | (only runs if `validate` passed) |
+
+Each stage is `python -m validity.stages <stage> runs/<id>`, which writes a short Markdown section to the job summary and exits non-zero to stop the pipeline. Start it from the Actions tab and pick a `demo_fault` to watch where each fault is stopped.
 
 ## The verdict
 

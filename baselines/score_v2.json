@@ -1,0 +1,6 @@
+{
+ "_note": "Plain score of clean CI runs on dataset v2 with the final policy (13 runs, Oct 2 2026). Used by the report stage to call a regression.",
+ "n": 13,
+ "mean": 0.830,
+ "sd": 0.019
+}

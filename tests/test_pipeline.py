@@ -119,3 +119,22 @@ def test_run_outputs_never_contain_the_key(tmp):
         for path in folder.rglob("*"):
             if path.is_file():
                 assert secret not in path.read_text(errors="ignore"), path
+
+
+def stage(name, run_dir, baseline):
+    return subprocess.run([sys.executable, "-m", "validity.stages", name, str(run_dir), "--baseline", str(baseline)],
+                          cwd=ROOT, env=ENV, capture_output=True, text=True).returncode
+
+
+def test_pipeline_stages_pass_clean_and_stop_bad_runs(tmp):
+    base = tmp / "baseline.json"
+    run(tmp, "st-clean")
+    run(tmp, "st-down", "--fault-plan", "plans/jev_down_mid.json")
+    run(tmp, "st-noenv", env={k: v for k, v in ENV.items() if k != "POLICY_VERSION"})
+    r = lambda rid: tmp / "runs" / rid  # noqa: E731
+    for name in ("preflight", "fingerprint", "integrity", "coverage", "gate", "report"):
+        assert stage(name, r("st-clean"), base) == 0, name
+    assert stage("coverage", r("st-down"), base) == 1
+    assert stage("gate", r("st-down"), base) == 1
+    assert stage("report", r("st-down"), base) == 1
+    assert stage("fingerprint", r("st-noenv"), base) == 1

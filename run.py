@@ -104,6 +104,8 @@ def main():
                     help="baseline manifest; default baselines/manifest_<dataset>.json")
     ap.add_argument("--out", default=os.path.join(ROOT, "runs"))
     ap.add_argument("--truth-dir", default=os.path.join(ROOT, "ground_truth"))
+    ap.add_argument("--preflight-only", action="store_true",
+                    help="write the manifest and run preflight, then stop (pipeline stage 1)")
     a = ap.parse_args()
 
     os.environ["RUN_ID"] = a.run_id
@@ -150,6 +152,11 @@ def main():
 
     bpath = a.baseline or datasets.baseline_path(a.dataset)
     baseline = json.load(open(bpath)) if os.path.exists(bpath) else None
+    if a.preflight_only:
+        tracing.shutdown()
+        for c in pre["checks"]:
+            print(f"  {'ok  ' if c['ok'] else 'FAIL'} {c['name']} {c['detail']}")
+        sys.exit(0 if pre["ok"] else 2)
     if not pre["ok"]:
         tracing.shutdown()
         finish(run_dir, baseline)

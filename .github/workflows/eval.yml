@@ -1,0 +1,140 @@
+name: eval
+# The reference pipeline from the paper: an eval run with a validity gate
+# between running it and publishing its score. Each stage is a job, so a run
+# that fails a check stops in red at that stage and never reaches the report.
+#
+#   preflight   canaries and data checksums, then the run's fingerprint is
+#               compared with the baseline. Fails before any paid eval call.
+#   run         the eval itself, traced. Uploads the run folder.
+#   validate    integrity (every item once, from this run), coverage (every
+#               item has a successful model and judge call), then the gate.
+#   report      only for runs that passed: score on valid items, the excluded
+#               items, and a comparison with the clean baseline.
+#
+# The demo inputs inject one fault so you can watch the pipeline stop it.
+on:
+  workflow_dispatch:
+    inputs:
+      demo_fault:
+        description: "Inject a fault to see where the pipeline stops it"
+        type: choice
+        default: none
+        options: [none, missing_env, wrong_commit, jev_down_mid, wrong_key_last20, tool_500_25, scorer_off_by_one_all, judge_flip_25]
+      error_policy:
+        type: choice
+        options: [loud, silent]
+        default: loud
+      backend:
+        type: choice
+        options: [api, stub]
+        default: api
+
+env:
+  RUN_ID: eval-${{ github.run_id }}-${{ inputs.demo_fault }}-${{ inputs.error_policy }}
+  DATASET: v2
+  MAX_SPEND_USD: "1"
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: "demo: older commit of the agent code"
+        if: inputs.demo_fault == 'wrong_commit'
+        run: git checkout "$(git log -n 1 --skip 1 --format=%H -- agents/)" -- agents/
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.lock
+      - name: Preflight (canaries, checksums)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          JEV_BACKEND: ${{ inputs.backend == 'stub' && 'stub' || '' }}
+        run: |
+          if [ "${{ inputs.demo_fault }}" != "missing_env" ]; then export POLICY_VERSION=v1; fi
+          plan=""
+          case "${{ inputs.demo_fault }}" in
+            jev_down_mid|wrong_key_last20|tool_500_25|scorer_off_by_one_all|judge_flip_25) plan="--fault-plan plans/${{ inputs.demo_fault }}.json" ;;
+          esac
+          python run.py --run-id "$RUN_ID" --error-policy ${{ inputs.error_policy }} $plan --preflight-only
+          python -m validity.stages preflight "runs/$RUN_ID"
+      - name: Fingerprint against the baseline
+        run: python -m validity.stages fingerprint "runs/$RUN_ID"
+
+  run:
+    needs: preflight
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: "demo: older commit of the agent code"
+        if: inputs.demo_fault == 'wrong_commit'
+        run: git checkout "$(git log -n 1 --skip 1 --format=%H -- agents/)" -- agents/
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.lock
+      - name: Run the eval (traced)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          JEV_BACKEND: ${{ inputs.backend == 'stub' && 'stub' || '' }}
+        run: |
+          if [ "${{ inputs.demo_fault }}" != "missing_env" ]; then export POLICY_VERSION=v1; fi
+          plan=""
+          case "${{ inputs.demo_fault }}" in
+            jev_down_mid|wrong_key_last20|tool_500_25|scorer_off_by_one_all|judge_flip_25) plan="--fault-plan plans/${{ inputs.demo_fault }}.json" ;;
+          esac
+          python run.py --run-id "$RUN_ID" --error-policy ${{ inputs.error_policy }} $plan || true
+      - name: No secrets in run outputs
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          if [ -n "$TYPESAFE_API_KEY" ] && grep -rqF "$TYPESAFE_API_KEY" runs; then exit 1; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-run
+          path: runs/${{ env.RUN_ID }}
+
+  validate:
+    needs: run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.lock
+      - uses: actions/download-artifact@v4
+        with:
+          name: eval-run
+          path: runs/${{ env.RUN_ID }}
+      - name: Integrity (every item once, from this run)
+        run: python -m validity.stages integrity "runs/$RUN_ID"
+      - name: Coverage (every item has a successful model and judge call)
+        if: always()
+        run: python -m validity.stages coverage "runs/$RUN_ID"
+      - name: Gate (attribution and verdict)
+        if: always()
+        run: python -m validity.stages gate "runs/$RUN_ID"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-verdict
+          path: runs/${{ env.RUN_ID }}/verdict.json
+
+  report:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.lock
+      - uses: actions/download-artifact@v4
+        with:
+          name: eval-run
+          path: runs/${{ env.RUN_ID }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: eval-verdict
+          path: runs/${{ env.RUN_ID }}
+      - name: Publish the score on valid items
+        run: python -m validity.stages report "runs/$RUN_ID"
